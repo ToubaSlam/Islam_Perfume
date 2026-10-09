@@ -67,7 +67,7 @@ function apply(){
     e.setAttribute('aria-label',language==='en'?'Switch to Arabic':'التبديل إلى الإنجليزية');
   });
   document.querySelectorAll('[data-theme-toggle]').forEach(e=>{
-    e.textContent=theme==='light'?'DARK':'LIGHT';
+    e.textContent=theme==='light'?'DARK':'Light';
     e.setAttribute('aria-label',language==='ar'?(theme==='light'?'تفعيل المظهر الداكن':'تفعيل المظهر الفاتح'):(theme==='light'?'Switch to dark mode':'Switch to light mode'));
   });
   document.querySelector('meta[name="theme-color"]').content=theme==='dark'?'#10121c':'#dce7ef';
