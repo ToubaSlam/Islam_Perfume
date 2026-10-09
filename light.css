@@ -1,0 +1,81 @@
+/* Muted blue workbench with lavender and sea-glass accents. */
+:root{color-scheme:light;--paper:#dce7ef;--ink:#263b52;--muted:#566d83;--line:#b8cad9;--gold:#347c80;--violet:#67558f;--mint:#277778;--coral:#a85857;--surface:#eaf0f5;--surface-blue:#d1e1ef;--surface-lilac:#e3dfed}
+body{background:radial-gradient(ellipse at 90% 0%,#d6d3e8,transparent 48%),radial-gradient(ellipse at 15% 80%,#d0e5e2,transparent 50%),var(--paper);background-attachment:fixed;color:var(--ink)}
+aside{background:linear-gradient(160deg,#cdddea,#dedeea);border-color:var(--line)}
+.brand .mark{background:linear-gradient(140deg,#aca3cd,#adc9df);color:#354764;box-shadow:0 8px 25px #56718b18}
+aside .eyebrow,header,footer,.aside-bottom,.aside-bottom p{color:var(--muted)}
+aside nav a{color:#455c74}
+aside nav a:hover{background:#b9cfe0;color:#263b52}
+aside nav a.active,aside nav a[href='#notebook'].active,aside nav a[href='#calculators'].active{background:#b8cfe3;border-color:#93aec8;color:#263b52;box-shadow:inset 3px 0 #6589ae}
+.pill{background:#cde2e2;border-color:#a8c9ca;color:#356b70}
+.intro,.small,.guide-intro,.lesson-card p,.recipe-card p,.lesson-block p,.guide-card>p,.recipe-article>p,.article-heading>p,.pyramid-copy p,.concentration-row p,.study-grid p,.study-grid .small,.documents p,.saved p{color:var(--muted)}
+.card,.guide-card,.lesson-card,.recipe-card,.lesson-article,.recipe-article,.resource-card,.material-card,.study-reference{background:var(--surface);border-color:var(--line);box-shadow:0 8px 25px #4869850a}
+.article-heading{background:linear-gradient(120deg,#d8d5e9,#dce7ef);border-color:var(--line)}
+.lesson-block h3,.pyramid-copy h3,.saved h3,.material-card strong{color:#4e4773}
+.practice-box{background:#d8e8e3;border-color:#adc9c0}
+.practice-box p{color:#456760}
+.guide-callout{background:#e1ddee;color:#5c5179}
+.lesson-card:hover,.recipe-card:hover,.resource-card:hover,.material-card:hover,.material-card[open]{border-color:#9b92bb}
+.course-stats a{background:linear-gradient(120deg,#d5d0e7,#e6e5f0);border-color:#b6accf}
+.course-stats a:nth-child(2){background:#d7e7e3;border-color:#afccc4}
+.course-stats a:nth-child(3){background:#ecdeda;border-color:#d5bdb5}
+.course-stats span{color:#58677d}
+.lesson-block h3,.article-heading h2,.guide-card h2,.recipe-article h2{color:var(--ink)}
+label{color:#3e566f}
+input,select,textarea,.search-label input{background:#f0f4f7;color:var(--ink);border-color:#b5c8d9}
+input::placeholder,textarea::placeholder{color:#788b9e}
+input:focus,textarea:focus,select:focus{border-color:#789bbc;box-shadow:0 0 0 3px #789bbc25}
+.secondary,.file-button{background:#dbe5ee;border-color:#b4c6d7;color:#3b536c}
+.secondary:hover,.file-button:hover{background:#c6d9e9}
+.primary{background:linear-gradient(120deg,#7295b6,#8376aa);color:#fff;box-shadow:0 5px 18px #597d9b20}
+.result-card{background:linear-gradient(135deg,#cee3e0,#d9e7ed);border-color:#a4c4c2;color:#325b61;box-shadow:0 12px 35px #527d8812}
+.result-card .eyebrow,.result-card .small,.result-row strong small{color:#50777b}
+.result-card h2,.result-row strong{color:#25696e}
+.result-row{border-color:#b2cccd}
+.principle{background:#d9e8e5;border-color:#b3ceca}
+.principle strong,.principle>span{color:#2b7274}
+.tag,.tag:first-child{background:#d8e5e5;color:#386b6e;border-color:#adc9ca}
+.tag:first-child{background:#e0daeb;color:#665387;border-color:#c0b3d1}
+.recipe-card .tag{color:#965c56;background:#ecded9;border-color:#d2bdb5}
+.recipe-unit,.recipe-bottom,.lesson-open{color:var(--mint)}
+.mini-results>div,.family-buttons button{background:#dce6ee;border-color:#b6c9d9}
+.family-buttons button{color:#455c74}
+.family-buttons button[aria-pressed=true]{color:#384c68;background:#d9d9ec;border-color:#a399c0}
+.mini-results span{color:var(--muted)}
+#family-description p,#family-description dd{color:var(--muted)}
+.native-table th{background:#d1dfeb;color:#435e79}
+.native-table td{color:var(--ink)}
+.native-table td,.native-table th{border-color:var(--line)}
+.concentration-track{background:#c6d5e2}
+.resource-cover{background:#d0dfea}
+.file-cover{background:radial-gradient(circle at 60% 35%,#bfd9d5,transparent 70%),#d2e0e8}
+.format-badge{background:#dce6eff2;color:#5c4c80;border-color:#b7b3ce}
+#resource-reader{background:var(--surface);border-color:var(--line)}
+#resource-reader::backdrop{background:#334a6a88}
+.reader-toolbar,#reader-content{background:#d5e1ec}
+.sheet-preview table{background:#e6edf3}
+.sheet-preview th,.sheet-preview td{border-color:#b5c6d6}
+.sheet-preview code{color:#655587}
+.material-card dd{color:#476079}
+.material-card dt{color:#655587}
+.documents{background:linear-gradient(110deg,#e7dce3,#dce3ed);border-color:#c8bacb}
+.documents h2{color:#785b72}
+.documents .file-button{background:#d3bdd0;color:#574762}
+.study-grid .card{background:var(--surface)}
+.bottle{background:linear-gradient(135deg,#bcc3de,#bcd9d6);border-color:#a4b5cf;box-shadow:0 15px 40px #68849c18}
+.bottle div{background:#8c91b2}.bottle span{background:#e5e4ee;color:#605d82;border-color:#b8b5d0}
+.error,#login-error{color:#a04e43}
+#toast{background:#d4dfed;color:#2e425c;border-color:#9eb6cd;box-shadow:0 10px 40px #4e698833}
+/* Section controls sit below their heading and stay in view during scrolling. */
+#calculators{display:block}
+#calculators .tabs,.reference-nav,.library-filters{position:sticky;top:12px;z-index:4;display:flex;flex-direction:row;flex-wrap:nowrap;gap:8px;align-items:center;overflow-x:auto;background:#d3e0eef5;border:1px solid #adc2d6;border-radius:13px;padding:9px;margin:0 0 24px;box-shadow:0 6px 18px #4e698819;backdrop-filter:blur(12px);scrollbar-width:thin;scroll-padding:12px}
+#calculators .tabs button,.reference-nav a,.library-filters button{flex:0 0 auto;white-space:nowrap;text-align:center;padding:12px 16px;font-size:14px;min-height:44px;border-radius:9px;color:#435e79;background:transparent;border:1px solid transparent;margin:0}
+#calculators .tabs button:hover,.reference-nav a:hover,.library-filters button:hover{background:#bfd2e5;color:#263b52}
+#calculators .tabs button[aria-selected=true],.reference-nav a.active,.library-filters button[aria-pressed=true]{color:#304d70;background:#b7cce4;border-color:#90aac9;box-shadow:none}
+.reference-layout{display:block}
+.library-tools{display:contents}
+.library-tools>label{margin:20px 0}
+.calc-layout{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+main>section{scroll-margin-top:90px}
+@media(max-width:1250px){.calc-layout{grid-template-columns:1fr}}
+@media(max-width:750px){#calculators .tabs,.reference-nav,.library-filters{top:8px;gap:5px;padding:7px;margin-bottom:20px}#calculators .tabs button,.reference-nav a,.library-filters button{font-size:13px;padding:10px 12px;min-height:42px}.reference-nav a{display:block}.course-stats a{padding:12px 9px}.guide-card,.card,.result-card{box-shadow:none}}
