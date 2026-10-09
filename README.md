@@ -8,7 +8,7 @@ Run locally: `python -m http.server 4173`, then open http://localhost:4173. Test
 
 In repository Settings → Pages → Build and deployment → Source, select GitHub Actions. Push to main or run Publish Perfume Atelier. Expected address: https://toubaslam.github.io/Islam_Perfume/.
 
-The repository is private. Pages availability depends on your GitHub plan. If unavailable, use a supported plan or explicitly choose to make the repository public. This project does not change visibility. A Pages website may be public even with private source.
+The repository and website are public, as authorized by the owner for free GitHub Pages hosting. Original course files and saved personal formulas are not included in the repository.
 
 ## Data and measurements
 
