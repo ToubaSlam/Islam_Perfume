@@ -34,12 +34,12 @@ function renderLesson(id) {
 $('#reference').innerHTML = `<p class="eyebrow">REFERENCE / THE ESSENTIALS</p><h1>See how the pieces fit.</h1><p class="intro">Explore the diagrams and numbers from your course as working reference tools.</p><div class="reference-layout"><nav class="reference-nav" aria-label="Reference guide"><a href="#reference/wheel">Fragrance wheel</a><a href="#reference/pyramid">Note pyramid</a><a href="#reference/concentration">Concentration</a><a href="#reference/dilution">Dilution guide</a></nav><div id="reference-content"></div></div>`;
 
 function wheelSVG() {
-  const point=(r,a)=>[200+r*Math.cos(a),200+r*Math.sin(a)];
-  return `<svg class="family-wheel" viewBox="0 0 400 400" aria-label="Fragrance wheel with fourteen selectable subgroups">${families.map((f,i)=>{
-    const start=i*2*Math.PI/14-Math.PI/2,end=(i+1)*2*Math.PI/14-Math.PI/2;
-    const [a,b,c,d]=[point(188,start),point(188,end),point(112,end),point(112,start)];
-    const t=point(153,(start+end)/2);
-    return `<g><path d="M ${a} A 188 188 0 0 1 ${b} L ${c} A 112 112 0 0 0 ${d} Z" fill="${f.color}" stroke="#151926" stroke-width="4" role="button" tabindex="0" aria-label="${f.name}" aria-pressed="${i===selectedFamily}" data-family="${i}"/><text x="${t[0]}" y="${t[1]}" text-anchor="middle" dominant-baseline="middle" pointer-events="none">${i+1}</text></g>`;
+  const point=(r,a)=>[750+r*Math.cos(a),422+r*Math.sin(a)];
+  return `<svg class="family-wheel photo-family-wheel" viewBox="330 0 840 844" role="group" aria-label="Photographic fragrance wheel with fourteen selectable subgroups"><image href="assets/library/ad914a15c76c9cde/page-1.webp" width="1500" height="844"/>${families.map((f,i)=>{
+    // The source starts with Floral Oriental at twelve o'clock.
+    const start=(i-2)*2*Math.PI/14-Math.PI/2,end=(i-1)*2*Math.PI/14-Math.PI/2;
+    const [a,b,c,d]=[point(410,start),point(410,end),point(143,end),point(143,start)];
+    return `<path d="M ${a} A 410 410 0 0 1 ${b} L ${c} A 143 143 0 0 0 ${d} Z" fill="transparent" role="button" tabindex="0" aria-label="${f.name}" aria-pressed="${i===selectedFamily}" data-family="${i}"><title>${f.name} ? select to explore</title></path>`;
   }).join('')}</svg>`;
 }
 
