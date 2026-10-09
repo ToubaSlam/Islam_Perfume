@@ -53,7 +53,7 @@ function translateDocument(){
     }
     attributes.set(el,records);
   }
-  document.title=language==='ar'?'إسلام · مختبر العطور':'Islam · Perfume Atelier';
+  document.title='Perfume Maker Lab by Sل';
   observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['placeholder','aria-label','alt','title']});
 }
 let scheduled=false;

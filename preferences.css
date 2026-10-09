@@ -1,4 +1,9 @@
 /* Theme-independent controls and section navigation. */
+.brand .brand-title{display:block;font-size:23px;line-height:1.35;letter-spacing:0;font-weight:600;margin-block:8px}
+.brand span:last-child{letter-spacing:0;font-size:13px}
+main>header .site-title{font-size:14px;font-weight:600;letter-spacing:0;line-height:1.5}
+footer bdi{letter-spacing:0}
+@media(max-width:750px){.brand .brand-title{font-size:13px;line-height:1.4}.brand span:last-child{display:block;font-size:11px}main>header .site-title{font-size:13px}}
 .preferences{display:flex;gap:12px;align-items:center;letter-spacing:0;flex-shrink:0}
 .preference-toggle{font-size:12px;font-weight:700;letter-spacing:1px;padding:10px 14px;min-height:42px;min-width:48px;line-height:1;direction:ltr}
 main>header{gap:16px;height:auto;min-height:84px;padding-block:16px;flex-wrap:wrap}
