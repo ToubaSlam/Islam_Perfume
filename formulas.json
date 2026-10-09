@@ -1,0 +1,2170 @@
+{
+  "source": "eBook 2 - Fragrance Formulas.pdf",
+  "publisher": "Lamai Cursos e Capacitações, 2022",
+  "formulas": [
+    {
+      "id": "artisan-1",
+      "number": 1,
+      "title": "Floral Garden",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Cedarwood",
+          "amount": 10.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 10.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lavender",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sweet Orange",
+          "amount": 20.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 5.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 55.0
+    },
+    {
+      "id": "artisan-2",
+      "number": 2,
+      "title": "Sandalwood Memories",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Vanilla",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Grapefruit",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 12.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 24.0
+    },
+    {
+      "id": "artisan-3",
+      "number": 3,
+      "title": "Gypsies",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Vanilla",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Clove",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Nutmeg",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lavender",
+          "amount": 12.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 24.0
+    },
+    {
+      "id": "artisan-4",
+      "number": 4,
+      "title": "Winter Wonderland",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Ginger",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Clove",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": 6.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Orange",
+          "amount": 12.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 22.0
+    },
+    {
+      "id": "artisan-5",
+      "number": 5,
+      "title": "Pumpkin Spice",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Clove",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ginger",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Vanilla",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Nutmeg",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Orange",
+          "amount": 12.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 24.0
+    },
+    {
+      "id": "artisan-6",
+      "number": 6,
+      "title": "Forest",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Cedarwood",
+          "amount": 20.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosemary",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sweet Orange",
+          "amount": 40.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Peppermint",
+          "amount": 10.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 75.0
+    },
+    {
+      "id": "artisan-7",
+      "number": 7,
+      "title": "Romance",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Vetiver",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lime",
+          "amount": 12.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 24.0
+    },
+    {
+      "id": "artisan-8",
+      "number": 8,
+      "title": "Intense",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Jasmine",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosewood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Orange",
+          "amount": 6.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 19.0
+    },
+    {
+      "id": "artisan-9",
+      "number": 9,
+      "title": "Flower Garden",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Jasmine",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cedar",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 13.0
+    },
+    {
+      "id": "artisan-10",
+      "number": 10,
+      "title": "Citrus Sandalwood",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 12.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Vanilla",
+          "amount": 12.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Grapefruit",
+          "amount": 15.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 12.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 51.0
+    },
+    {
+      "id": "artisan-11",
+      "number": 11,
+      "title": "Peace",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Bergamot",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Frankincense",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cedarwood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 8.0
+    },
+    {
+      "id": "artisan-12",
+      "number": 12,
+      "title": "Poise",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Basil",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Coriander",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Petitgrain",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-13",
+      "number": 13,
+      "title": "Decisiveness",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Benzoin",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Frankincense",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Geranium",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Orange",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 4,
+      "pdfPage": 5,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 9.0
+    },
+    {
+      "id": "artisan-14",
+      "number": 14,
+      "title": "Self Belief",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Ginger",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Myrtle",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosemary",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Verbena",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 12.0
+    },
+    {
+      "id": "artisan-15",
+      "number": 15,
+      "title": "Wedding",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Jasmine",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lemon",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 7.0
+    },
+    {
+      "id": "artisan-16",
+      "number": 16,
+      "title": "Bliss",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Bergamot",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Jasmine",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 6.0
+    },
+    {
+      "id": "artisan-17",
+      "number": 17,
+      "title": "Joyfulness",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Brasil",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Geranium",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Melissa",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary. The source prints “Brasil”; the intended ingredient is unclear. Confirm it with the instructor before using this formula.",
+      "total": 8.0
+    },
+    {
+      "id": "artisan-18",
+      "number": 18,
+      "title": "Warmth",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Black Pepper",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosewood",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 12.0
+    },
+    {
+      "id": "artisan-19",
+      "number": 19,
+      "title": "Arabian Nights",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Coriander",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Frankincense",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Juniper",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Orange",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 11.0
+    },
+    {
+      "id": "artisan-20",
+      "number": 20,
+      "title": "Egyptian Empress",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Cinnamon",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lime",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 5.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 14.0
+    },
+    {
+      "id": "artisan-21",
+      "number": 21,
+      "title": "Moroccan Mystique",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Bergamot",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Palmarosa",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary. Rose and Sandalwood continue at the top of the right column on the source page.",
+      "total": 12.0
+    },
+    {
+      "id": "artisan-22",
+      "number": 22,
+      "title": "Win",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Caraway",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cardamom",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Frankincense",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosewood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 9.0
+    },
+    {
+      "id": "artisan-23",
+      "number": 23,
+      "title": "Inspiration",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Frankincense",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Grapefruit",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosemary",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Spearmint",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-24",
+      "number": 24,
+      "title": "Elevation",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Bergamot",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Jasmine",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lemongrass",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Neroli",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 9.0
+    },
+    {
+      "id": "artisan-25",
+      "number": 25,
+      "title": "Tranquility",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Cedarwood",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Clary Sage",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Grapefruit",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Mandarin",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 9.0
+    },
+    {
+      "id": "artisan-26",
+      "number": 26,
+      "title": "Chill out",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Grapefruit",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Vetiver",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-27",
+      "number": 27,
+      "title": "Love Tonic",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Vanilla",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cedarwood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 15.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 23.0
+    },
+    {
+      "id": "artisan-28",
+      "number": 28,
+      "title": "Orient Nights",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Musk",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Frankincense",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 5,
+      "pdfPage": 6,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 11.0
+    },
+    {
+      "id": "artisan-29",
+      "number": 29,
+      "title": "Whispering Rain",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 10.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cassis",
+          "amount": 10.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 25.0
+    },
+    {
+      "id": "artisan-30",
+      "number": 30,
+      "title": "Falling Stars",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Lavender",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Chamomile",
+          "amount": 10.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Valerian",
+          "amount": 10.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 25.0
+    },
+    {
+      "id": "artisan-31",
+      "number": 31,
+      "title": "Enchanted",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Everlasting",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Peony",
+          "amount": 10.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 10.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 25.0
+    },
+    {
+      "id": "artisan-32",
+      "number": 32,
+      "title": "Amaze",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Hypericum Perforatum",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cypress",
+          "amount": 10.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosemary",
+          "amount": 10.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 25.0
+    },
+    {
+      "id": "artisan-33",
+      "number": 33,
+      "title": "Misty Passions",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Passion Fruit Flower",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Neroli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 8.0
+    },
+    {
+      "id": "artisan-34",
+      "number": 34,
+      "title": "Night Time",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Musk",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Frankincense",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 13.0
+    },
+    {
+      "id": "artisan-35",
+      "number": 35,
+      "title": "Sleep Tight",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Bergamot",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Chamomile",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Marjoram",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lavender",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 11.0
+    },
+    {
+      "id": "artisan-36",
+      "number": 36,
+      "title": "Silence",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Lavender",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Neroli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Spearmint",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 8.0
+    },
+    {
+      "id": "artisan-37",
+      "number": 37,
+      "title": "Ardour",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Jasmine",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Neroli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Orange",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-38",
+      "number": 38,
+      "title": "Devotion",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Clary Sage",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rosewood",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-39",
+      "number": 39,
+      "title": "Tenderness",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Linden Blossom",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lime",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Neroli",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-40",
+      "number": 40,
+      "title": "Zeal",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Melissa",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 8.0
+    },
+    {
+      "id": "artisan-41",
+      "number": 41,
+      "title": "Inamorato",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Coriander",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lime",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 9.0
+    },
+    {
+      "id": "artisan-42",
+      "number": 42,
+      "title": "Innamorata",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Bergamot",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Jasmine",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 3.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 8.0
+    },
+    {
+      "id": "artisan-43",
+      "number": 43,
+      "title": "Mother",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Neroli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 4.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-44",
+      "number": 44,
+      "title": "Alluring",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 7.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 7.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Neroli",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Jasmine",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 6,
+      "pdfPage": 7,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 18.0
+    },
+    {
+      "id": "artisan-45",
+      "number": 45,
+      "title": "Mysterious",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Lavender",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cedarwood",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 12.0
+    },
+    {
+      "id": "artisan-46",
+      "number": 46,
+      "title": "Floral Romance",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Palmarosa",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 3.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose Geranium",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 10.0
+    },
+    {
+      "id": "artisan-47",
+      "number": 47,
+      "title": "Fountain of Youth",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Grapefruit",
+          "amount": 9.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose Geranium",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 11.0
+    },
+    {
+      "id": "artisan-48",
+      "number": 48,
+      "title": "Luscious",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Lavender",
+          "amount": 6.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Frankincense",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose Geranium",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 11.0
+    },
+    {
+      "id": "artisan-49",
+      "number": 49,
+      "title": "Sensuously Spicy",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sandalwood",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Orange",
+          "amount": 2.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 1.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 12.0
+    },
+    {
+      "id": "artisan-50",
+      "number": 50,
+      "title": "Fruity",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Sweet Orange",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Bergamot",
+          "amount": 7.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose",
+          "amount": 10.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ginger",
+          "amount": 5.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary. Bergamot, Rose and Ginger continue at the top of the right column on the source page.",
+      "total": 30.0
+    },
+    {
+      "id": "artisan-51",
+      "number": 51,
+      "title": "Autumn Spice",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Tangerine",
+          "amount": 12.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": 12.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Cedarwood",
+          "amount": 6.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 30.0
+    },
+    {
+      "id": "artisan-52",
+      "number": 52,
+      "title": "Sweet Musk",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Ylang Ylang",
+          "amount": 12.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Palmarosa",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Clove",
+          "amount": 2.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 30.0
+    },
+    {
+      "id": "artisan-53",
+      "number": 53,
+      "title": "Forest Aromas",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Lime",
+          "amount": 7.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Scotch Pine",
+          "amount": 9.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Oak moss",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Vetiver",
+          "amount": 6.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 30.0
+    },
+    {
+      "id": "artisan-54",
+      "number": 54,
+      "title": "Sensual",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Nutmeg",
+          "amount": 4.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Blood Orange",
+          "amount": 8.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Ylang Ylang",
+          "amount": 8.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 20.0
+    },
+    {
+      "id": "artisan-55",
+      "number": 55,
+      "title": "Upbeat n' Happy",
+      "group": "Artisan",
+      "unit": "drops",
+      "ingredients": [
+        {
+          "name": "Bergamot",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Grapefruit",
+          "amount": 5.0,
+          "note": "Unassigned"
+        },
+        {
+          "name": "Rose Geranium",
+          "amount": 1.0,
+          "note": "Unassigned"
+        }
+      ],
+      "sourcePage": 7,
+      "pdfPage": 8,
+      "note": "The source does not assign top, heart or base roles to these ingredients. Drops are not a weight measurement; actual drop sizes vary.",
+      "total": 11.0
+    },
+    {
+      "id": "pro-1",
+      "number": 1,
+      "title": "Pro Formula 1",
+      "group": "Professional",
+      "unit": "mL",
+      "ingredients": [
+        {
+          "name": "Ylang Ylang EO",
+          "amount": 3.0,
+          "note": "Top"
+        },
+        {
+          "name": "Geranium Bourbon AC",
+          "amount": 2.0,
+          "note": "Top"
+        },
+        {
+          "name": "Lilly of the Valley AC",
+          "amount": 3.0,
+          "note": "Top"
+        },
+        {
+          "name": "Lotus Blossom AC",
+          "amount": 0.5,
+          "note": "Top"
+        },
+        {
+          "name": "Geranium Bourbon EO",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Lily-of-the-valley AC",
+          "amount": 1.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Mango Mandarin AC",
+          "amount": 0.5,
+          "note": "Heart"
+        },
+        {
+          "name": "Benzyl Isobutyrate AC",
+          "amount": 1.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Sandalwood EO",
+          "amount": 3.0,
+          "note": "Base"
+        },
+        {
+          "name": "Vanilla AC",
+          "amount": 0.5,
+          "note": "Base"
+        },
+        {
+          "name": "Frankincense EO",
+          "amount": 1.0,
+          "note": "Base"
+        },
+        {
+          "name": "Beta ionone AC",
+          "amount": 1.0,
+          "note": "Base"
+        }
+      ],
+      "sourcePage": 8,
+      "pdfPage": 9,
+      "note": "Note roles and material names follow the ebook. AA = aroma accord; AC = aroma chemical; EO = essential oil. These abbreviations and names do not identify a unique supplier product or its dilution.",
+      "baseNote": "The ebook specifies 350 mL perfumer’s alcohol as a base and suggests 4.5 mL fixative if the base has none. Those quantities are separate from the concentrate below; supplier compatibility and finished-product suitability are not established by this recipe.",
+      "total": 18.5
+    },
+    {
+      "id": "pro-2",
+      "number": 2,
+      "title": "Pro Formula 2",
+      "group": "Professional",
+      "unit": "mL",
+      "ingredients": [
+        {
+          "name": "True Rose AA",
+          "amount": 10.0,
+          "note": "Top"
+        },
+        {
+          "name": "Hawthorn Rose AA",
+          "amount": 6.0,
+          "note": "Top"
+        },
+        {
+          "name": "Bright Floral AC",
+          "amount": 4.0,
+          "note": "Top"
+        },
+        {
+          "name": "Fruit AA",
+          "amount": 10.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Jasmine AA",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Fruity violate AC",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Sandalwood AA",
+          "amount": 8.0,
+          "note": "Base"
+        },
+        {
+          "name": "Warm amber AA",
+          "amount": 3.0,
+          "note": "Base"
+        },
+        {
+          "name": "Alpha Ionone AC",
+          "amount": 2.0,
+          "note": "Base"
+        }
+      ],
+      "sourcePage": 8,
+      "pdfPage": 9,
+      "note": "Note roles and material names follow the ebook. AA = aroma accord; AC = aroma chemical; EO = essential oil. These abbreviations and names do not identify a unique supplier product or its dilution. “Fruity violate AC” is printed this way in the source; confirm the intended material.",
+      "baseNote": "The ebook specifies 350 mL perfumer’s alcohol as a base and suggests 4.5 mL fixative if the base has none. Those quantities are separate from the concentrate below; supplier compatibility and finished-product suitability are not established by this recipe.",
+      "total": 47.0
+    },
+    {
+      "id": "pro-3",
+      "number": 3,
+      "title": "Pro Formula 3",
+      "group": "Professional",
+      "unit": "mL",
+      "ingredients": [
+        {
+          "name": "Peonile AC",
+          "amount": 4.0,
+          "note": "Top"
+        },
+        {
+          "name": "Hawthorn Rose AC",
+          "amount": 4.0,
+          "note": "Top"
+        },
+        {
+          "name": "Ylang Ylang EO",
+          "amount": 2.0,
+          "note": "Top"
+        },
+        {
+          "name": "Rose Geranium EO",
+          "amount": 2.0,
+          "note": "Top"
+        },
+        {
+          "name": "Tropical wood AA",
+          "amount": 8.0,
+          "note": "Top"
+        },
+        {
+          "name": "Bright-Floral AC",
+          "amount": 6.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Violet AC",
+          "amount": 4.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Jasmine EO",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Rose EO",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Alpha ionone AC",
+          "amount": 5.0,
+          "note": "Base"
+        },
+        {
+          "name": "Violet AC",
+          "amount": 4.0,
+          "note": "Base"
+        },
+        {
+          "name": "Labdanum EO",
+          "amount": 5.0,
+          "note": "Base"
+        }
+      ],
+      "sourcePage": 9,
+      "pdfPage": 10,
+      "note": "Note roles and material names follow the ebook. AA = aroma accord; AC = aroma chemical; EO = essential oil. These abbreviations and names do not identify a unique supplier product or its dilution.",
+      "baseNote": "The ebook specifies 350 mL perfumer’s alcohol as a base and suggests 4.5 mL fixative if the base has none. Those quantities are separate from the concentrate below; supplier compatibility and finished-product suitability are not established by this recipe.",
+      "total": 48.0
+    },
+    {
+      "id": "pro-4",
+      "number": 4,
+      "title": "Pro Formula 4",
+      "group": "Professional",
+      "unit": "mL",
+      "ingredients": [
+        {
+          "name": "Tuberose AC",
+          "amount": 4.0,
+          "note": "Top"
+        },
+        {
+          "name": "Bergamot AC",
+          "amount": 1.0,
+          "note": "Top"
+        },
+        {
+          "name": "Rose AC",
+          "amount": 2.0,
+          "note": "Top"
+        },
+        {
+          "name": "Benzoin EO",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Caraway AC",
+          "amount": 0.5,
+          "note": "Heart"
+        },
+        {
+          "name": "Carnation AC",
+          "amount": 4.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Lily-of-the-valley AC",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Sandalwood AC",
+          "amount": 2.0,
+          "note": "Base"
+        },
+        {
+          "name": "Vetiver AC",
+          "amount": 0.5,
+          "note": "Base"
+        },
+        {
+          "name": "Pineapple AC",
+          "amount": 1.0,
+          "note": "Base"
+        },
+        {
+          "name": "Allyl Cyclohexyl AC",
+          "amount": 1.0,
+          "note": "Base"
+        }
+      ],
+      "sourcePage": 9,
+      "pdfPage": 10,
+      "note": "Note roles and material names follow the ebook. AA = aroma accord; AC = aroma chemical; EO = essential oil. These abbreviations and names do not identify a unique supplier product or its dilution.",
+      "baseNote": "The ebook specifies 350 mL perfumer’s alcohol as a base and suggests 4.5 mL fixative if the base has none. Those quantities are separate from the concentrate below; supplier compatibility and finished-product suitability are not established by this recipe.",
+      "total": 20.0
+    },
+    {
+      "id": "pro-5",
+      "number": 5,
+      "title": "Pro Formula 5",
+      "group": "Professional",
+      "unit": "mL",
+      "ingredients": [
+        {
+          "name": "Ylang-Ylang AC",
+          "amount": 5.0,
+          "note": "Top"
+        },
+        {
+          "name": "Bergamot AC",
+          "amount": 2.0,
+          "note": "Top"
+        },
+        {
+          "name": "Kumquat AC",
+          "amount": 1.0,
+          "note": "Top"
+        },
+        {
+          "name": "Patchouli AC",
+          "amount": 0.5,
+          "note": "Heart"
+        },
+        {
+          "name": "Lily-of-the-Valley AC",
+          "amount": 3.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Jasmine AC",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Lotus Blossom AC",
+          "amount": 1.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Amyl Cinnamic AC",
+          "amount": 1.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Frankincense AC",
+          "amount": 1.0,
+          "note": "Base"
+        },
+        {
+          "name": "Vetiver AC",
+          "amount": 1.0,
+          "note": "Base"
+        },
+        {
+          "name": "Sandalwood AC",
+          "amount": 3.0,
+          "note": "Base"
+        },
+        {
+          "name": "Apricot AC",
+          "amount": 0.5,
+          "note": "Base"
+        }
+      ],
+      "sourcePage": 10,
+      "pdfPage": 11,
+      "note": "Note roles and material names follow the ebook. AA = aroma accord; AC = aroma chemical; EO = essential oil. These abbreviations and names do not identify a unique supplier product or its dilution.",
+      "baseNote": "The ebook specifies 350 mL perfumer’s alcohol as a base and suggests 4.5 mL fixative if the base has none. Those quantities are separate from the concentrate below; supplier compatibility and finished-product suitability are not established by this recipe.",
+      "total": 21.0
+    },
+    {
+      "id": "pro-6",
+      "number": 6,
+      "title": "Pro Formula 6",
+      "group": "Professional",
+      "unit": "mL",
+      "ingredients": [
+        {
+          "name": "Patchouli AC",
+          "amount": 0.5,
+          "note": "Top"
+        },
+        {
+          "name": "Kumquat AC",
+          "amount": 2.0,
+          "note": "Top"
+        },
+        {
+          "name": "Rose AC",
+          "amount": 3.0,
+          "note": "Top"
+        },
+        {
+          "name": "Apricot AC",
+          "amount": 1.0,
+          "note": "Top"
+        },
+        {
+          "name": "Ylang Ylang AC",
+          "amount": 3.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Jasmine AC",
+          "amount": 4.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Lily-of-the-Valley",
+          "amount": 2.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Roses",
+          "amount": 1.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Cassis AC",
+          "amount": 1.0,
+          "note": "Heart"
+        },
+        {
+          "name": "Sandalwood",
+          "amount": 4.0,
+          "note": "Base"
+        },
+        {
+          "name": "Vetiver",
+          "amount": 0.5,
+          "note": "Base"
+        },
+        {
+          "name": "Patchouli",
+          "amount": 0.5,
+          "note": "Base"
+        },
+        {
+          "name": "Allyl Cyclohexyl",
+          "amount": 1.0,
+          "note": "Base"
+        }
+      ],
+      "sourcePage": 10,
+      "pdfPage": 11,
+      "note": "Note roles and material names follow the ebook. AA = aroma accord; AC = aroma chemical; EO = essential oil. These abbreviations and names do not identify a unique supplier product or its dilution. Several entries have no AA/AC/EO designation in the source; none has been inferred.",
+      "baseNote": "The ebook specifies 350 mL perfumer’s alcohol as a base and suggests 4.5 mL fixative if the base has none. Those quantities are separate from the concentrate below; supplier compatibility and finished-product suitability are not established by this recipe.",
+      "total": 23.5
+    }
+  ]
+}

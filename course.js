@@ -1,0 +1,102 @@
+import { lessons, families, concentrations, courseSource } from './course-data.js';
+import { scale } from './math.js';
+
+const $ = s => document.querySelector(s);
+const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const number = n => Number(n.toFixed(4)).toLocaleString('en', {maximumFractionDigits:4});
+const recipeSource = 'eBook 2 - Fragrance Formulas.pdf';
+let recipes = [], selectedFamily = 0;
+
+function sourceButton(filename, page, label = 'View source page') {
+  return `<button class="source-link" data-source="${escape(filename)}" data-page="${page}">${escape(label)} ↗</button>`;
+}
+
+$('#learn').innerHTML = `<p class="eyebrow">LEARN / ARTISAN PERFUMERY</p><h1>From your first note to your own scent.</h1><p class="intro">Your course, organized into lessons you can read and put into practice here.</p><div id="learning-overview"><div class="course-stats"><a href="#learn"><strong>${lessons.length}</strong><span>Practical lessons</span></a><a href="#reference"><strong>4</strong><span>Interactive guides</span></a><a href="#formulas"><strong>61</strong><span>Course formulas</span></a></div><label class="course-search">Find a lesson<input id="lesson-search" type="search" placeholder="Try carriers, maturation, photography…"></label><div id="lesson-groups"></div><p class="small">Adapted study notes from Lamai Cursos e Capacitações · Artisan Perfumery (2022). Recipe quantities and source discrepancies are identified in the relevant pages.</p></div><div id="lesson-detail" hidden></div>`;
+
+function renderLessons() {
+  const q = $('#lesson-search').value.toLowerCase().trim();
+  const matches = lessons.filter(l => JSON.stringify(l).toLowerCase().includes(q));
+  const groups = [...new Set(matches.map(l => l.group))];
+  $('#lesson-groups').innerHTML = groups.map((g,index) => `<div class="lesson-group"><div class="group-label"><span>${String(index+1).padStart(2,'0')}</span><h2>${g}</h2></div><div class="lesson-grid">${matches.filter(l=>l.group===g).map(l=>`<a class="lesson-card" href="#learn/${l.id}"><span class="eyebrow">${l.pages.length===1?'PAGE':'PAGES'} ${l.pages.join(', ')}</span><h3>${l.title}</h3><p>${l.summary}</p><span class="lesson-open">Read lesson <span aria-hidden="true">↗</span></span></a>`).join('')}</div></div>`).join('') || '<p class="small">No lessons found. Try another word from the course.</p>';
+}
+$('#lesson-search').oninput = renderLessons;
+renderLessons();
+
+function renderLesson(id) {
+  const lesson = lessons.find(l=>l.id===id);
+  $('#learning-overview').hidden = Boolean(lesson);
+  $('#lesson-detail').hidden = !lesson;
+  if (!lesson) return;
+  const index=lessons.indexOf(lesson);
+  $('#lesson-detail').innerHTML = `<a class="back-link" href="#learn">← All lessons</a><article class="lesson-article"><div class="article-heading"><span class="tag">${lesson.group}</span><h2 tabindex="-1">${lesson.title}</h2><p>${lesson.summary}</p></div><div class="article-body">${lesson.blocks.map(([title,body])=>`<div class="lesson-block"><h3>${title}</h3><p>${body}</p></div>`).join('')}<div class="practice-box"><span class="eyebrow">TRY THIS</span><p>${lesson.exercise}</p>${lesson.action?`<a class="primary" href="#${lesson.action}">${lesson.action.startsWith('reference')?'Explore the guide':lesson.action.startsWith('calculators')?'Open calculator':lesson.action==='formulas'?'Browse formulas':'Open notebook'} ↗</a>`:''}</div>${lesson.links?`<div class="lesson-links">${lesson.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener">${label} ↗</a>`).join('')}</div>`:''}<div class="source-row"><span>Artisan Perfumery · ${lesson.pages.length===1?'page':'pages'} ${lesson.pages.join(', ')}</span>${sourceButton(courseSource,lesson.pages[0])}</div><div class="lesson-next">${index>0?`<a href="#learn/${lessons[index-1].id}">← Previous lesson</a>`:'<span></span>'}${index<lessons.length-1?`<a href="#learn/${lessons[index+1].id}">Next: ${lessons[index+1].title} →</a>`:''}</div></div></article>`;
+}
+
+$('#reference').innerHTML = `<p class="eyebrow">REFERENCE / THE ESSENTIALS</p><h1>See how the pieces fit.</h1><p class="intro">Explore the diagrams and numbers from your course as working reference tools.</p><div class="reference-layout"><nav class="reference-nav" aria-label="Reference guide"><a href="#reference/wheel">Fragrance wheel</a><a href="#reference/pyramid">Note pyramid</a><a href="#reference/concentration">Concentration</a><a href="#reference/dilution">Dilution guide</a></nav><div id="reference-content"></div></div>`;
+
+function wheelSVG() {
+  const point=(r,a)=>[200+r*Math.cos(a),200+r*Math.sin(a)];
+  return `<svg class="family-wheel" viewBox="0 0 400 400" aria-label="Fragrance wheel with fourteen selectable subgroups">${families.map((f,i)=>{
+    const start=i*2*Math.PI/14-Math.PI/2,end=(i+1)*2*Math.PI/14-Math.PI/2;
+    const [a,b,c,d]=[point(188,start),point(188,end),point(112,end),point(112,start)];
+    const t=point(153,(start+end)/2);
+    return `<g><path d="M ${a} A 188 188 0 0 1 ${b} L ${c} A 112 112 0 0 0 ${d} Z" fill="${f.color}" stroke="#151926" stroke-width="4" role="button" tabindex="0" aria-label="${f.name}" aria-pressed="${i===selectedFamily}" data-family="${i}"/><text x="${t[0]}" y="${t[1]}" text-anchor="middle" dominant-baseline="middle" pointer-events="none">${i+1}</text></g>`;
+  }).join('')}</svg>`;
+}
+
+function renderFamily() {
+  const f=families[selectedFamily];
+  $('#wheel-center').innerHTML=`<span>${f.group}</span><strong>${f.name}</strong>`;
+  $('#family-description').innerHTML=`<span class="tag" style="--accent:${f.color}">${f.group}</span><h3>${f.name}</h3><p>${f.description}</p><dl><dt>Course examples</dt><dd>${f.examples}</dd><dt>Neighbors to compare</dt><dd>${f.pair}</dd></dl>`;
+  $('#reference-content').querySelectorAll('[data-family]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.family)===selectedFamily));
+}
+
+function renderReference(id='wheel') {
+  if(!['wheel','pyramid','concentration','dilution'].includes(id)) id='wheel';
+  $('.reference-nav').querySelectorAll('a').forEach(a=>{const active=a.hash===`#reference/${id}`;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  const box=$('#reference-content');
+  if(id==='wheel'){
+    box.innerHTML=`<article class="guide-card"><h2>The fragrance wheel</h2><p class="guide-intro">Select a segment or a subgroup below to explore its character and neighbors.</p><div class="wheel-layout"><div class="wheel-wrap">${wheelSVG()}<div id="wheel-center"></div></div><div id="family-description" aria-live="polite"></div></div><div class="family-buttons">${families.map((f,i)=>`<button data-family="${i}" style="--family-color:${f.color}" aria-pressed="${i===selectedFamily}"><span>${i+1}</span>${f.name}</button>`).join('')}</div><div class="guide-callout">Try neighboring families for shared qualities, opposite areas for contrast, or a triangle such as Citrus / Soft Floral / Woody Oriental. These are creative prompts from the course.</div><p class="small">The source calls one family “Oriental”; Amber / Oriental appears here so both terms are recognizable. Classifications are descriptive and can vary.</p>${sourceButton('Guide - Fragrance Wheel.pdf',1,'Compare the original wheel')}</article>`;
+    renderFamily();
+  }
+  if(id==='pyramid'){
+    box.innerHTML=`<article class="guide-card"><h2>The olfactory pyramid</h2><p class="guide-intro">The course’s three-layer model describes a fragrance’s development over time.</p><div class="pyramid-layout"><div class="pyramid-visual"><div class="pyramid-top"><strong>Top</strong><span>Opening</span></div><div class="pyramid-heart"><strong>Heart</strong><span>Middle</span></div><div class="pyramid-base"><strong>Base</strong><span>Dry-down</span></div></div><div class="pyramid-copy"><h3>Top · 5–15 min</h3><p>Citrus, Water and Aromatic in the supplied diagram.</p><h3>Heart · 20–60 min</h3><p>Fruity, Green, Floral and Oriental notes.</p><h3>Base · 5–6 hours</h3><p>Woody notes, resins and balsamic impressions.</p></div></div><p class="small">Times are the source’s illustrative ranges. Actual behavior depends on the material and composition; layers overlap.</p><div class="pyramid-planner"><h3>Try the course’s 30 / 50 / 20 starting point</h3><label>Planned concentrate (g)<input id="pyramid-total" type="number" min="0.001" step="any" value="10"></label><div id="pyramid-result" class="mini-results" aria-live="polite"></div><p class="small">This divides a planning weight between note groups. It does not choose ingredients or establish use limits.</p></div>${sourceButton('Guide - Olfactory Pyramid.pdf',1,'Compare the original diagram')}</article>`;
+    const update=()=>{const n=Number($('#pyramid-total').value);$('#pyramid-result').innerHTML=Number.isFinite(n)&&n>0?[[30,'Top'],[50,'Heart'],[20,'Base']].map(([p,note])=>`<div><span>${note} · ${p}%</span><strong>${number(n*p/100)} g</strong></div>`).join(''):'<p>Enter a positive concentrate weight.</p>';};$('#pyramid-total').oninput=update;update();
+  }
+  if(id==='concentration'){
+    box.innerHTML=`<article class="guide-card"><h2>Fragrance concentration</h2><p class="guide-intro">Compare the ranges in your course chart for a chosen finished batch.</p><label class="guide-input">Example finished batch (mL)<input id="concentration-total" type="number" min="0.001" step="any" value="50"></label><div id="concentration-results" aria-live="polite"></div><p class="small">These are the course’s naming ranges, which vary between producers. The comparison below assumes volume percentages. Category names do not establish ingredient safety or wearing time.</p>${sourceButton('Printable - Fragrance Concentration.pdf',1,'Compare the original chart')}</article>`;
+    const update=()=>{const n=Number($('#concentration-total').value);$('#concentration-results').innerHTML=Number.isFinite(n)&&n>0?concentrations.map(([name,min,max],i)=>`<div class="concentration-row" style="--range-color:${['#f59dac','#f0cf7d','#99dec0','#b6a0ed','#e7ad85'][i]}"><div><h3>${name}</h3><p>${min}–${max}% · ${number(n*min/100)}–${number(n*max/100)} mL fragrance in ${number(n)} mL</p><div class="concentration-track"><span style="margin-left:${min/40*100}%;width:${(max-min)/40*100}%"></span></div></div><button class="secondary" data-concentration="${(min+max)/2}" data-batch="${n}">Calculate ${(min+max)/2}%</button></div>`).join(''):'<p>Enter a positive batch volume.</p>';};$('#concentration-total').oninput=update;update();
+  }
+  if(id==='dilution'){
+    box.innerHTML=`<article class="guide-card"><h2>The course dilution sheet</h2><p class="guide-intro">The image titled “Essential oil in cosmetics ratio” is transcribed below for reference.</p><div class="native-table-wrap"><table class="native-table"><thead><tr><th>Use described in source</th><th>EO percentage shown</th><th>Product examples</th></tr></thead><tbody><tr><td>Daily face, scalp, hair and beard products</td><td>Up to 1.5%</td><td>Moisturizers, serums, toners, soaps and shampoos</td></tr><tr><td>Daily body products</td><td>Up to 2%</td><td>Moisturizers, soaps, creams, oils and ointments</td></tr><tr><td>“Aesthetics and acute problems” (source wording)</td><td>3–5%</td><td>Creams and oils described for massage and professional use</td></tr></tbody></table></div><div class="guide-callout">These are broad statements in the supplied sheet, not universal safe-use limits or treatment advice. It does not specify whether the percentages are by weight or volume. Suitability depends on the actual materials and finished product.</div><h3>Dilution arithmetic</h3><p>Stock amount = final amount × target concentration ÷ stock concentration. Keep the same measurement basis for both concentrations.</p><p>For 10 g of a 10% solution from a 100% stock: use 1 g stock and 9 g solvent. From a 20% stock: use 5 g stock and 5 g solvent.</p><a class="primary" href="#calculators/dilution">Open dilution calculator ↗</a><p class="small">IFRA quantitative restrictions concern the finished consumer product. <a href="https://ifrafragrance.org/using-the-standards" target="_blank" rel="noopener">Read IFRA’s guidance ↗</a></p>${sourceButton('Quick Reference Dillution Guide.pdf',1,'View the source sheet')}</article>`;
+  }
+}
+
+$('#reference-content').addEventListener('click',e=>{
+  const family=e.target.closest('[data-family]');if(family){selectedFamily=Number(family.dataset.family);renderFamily();}
+  const calc=e.target.closest('[data-concentration]');if(calc){window.dispatchEvent(new CustomEvent('course-calculator',{detail:{mode:'perfume',load:Number(calc.dataset.concentration),size:Number(calc.dataset.batch)}}));location.hash='#calculators/perfume';}
+});
+$('#reference-content').addEventListener('keydown',e=>{if(e.target.matches('path[data-family]')&&['Enter',' '].includes(e.key)){e.preventDefault();selectedFamily=Number(e.target.dataset.family);renderFamily();}});
+
+$('#formulas').innerHTML=`<p class="eyebrow">FORMULAS / FROM YOUR EBOOK</p><h1>A recipe collection you can work with.</h1><p class="intro">55 artisan blends and 6 professional formulas, transcribed into searchable ingredient tables.</p><div id="formula-overview"><div class="recipe-tools"><label>Search name or ingredient<input id="recipe-search" type="search" placeholder="Try bergamot, sandalwood or Floral Garden…"></label><label>Collection<select id="recipe-filter"><option value="All">All formulas</option><option>Artisan</option><option>Professional</option></select></label></div><p id="recipe-count" class="small" role="status">Loading formulas…</p><div id="recipe-grid"></div><p class="small">Source: Lamai Cursos e Capacitações · Fragrance Formulas (2022). Study transcriptions preserve source units and supplied names; they are not verified finished-product specifications.</p></div><div id="recipe-detail" hidden></div>`;
+
+function renderRecipes(){
+  const q=$('#recipe-search').value.toLowerCase().trim(),group=$('#recipe-filter').value;
+  const shown=recipes.filter(r=>(group==='All'||r.group===group)&&`${r.title} ${r.ingredients.map(i=>i.name).join(' ')}`.toLowerCase().includes(q));
+  $('#recipe-count').textContent=`${shown.length} formulas`;
+  $('#recipe-grid').innerHTML=shown.map(r=>`<a class="recipe-card" href="#formulas/${r.id}"><div><span class="tag">${r.group} ${r.number}</span><span class="recipe-unit">${r.unit}</span></div><h3>${escape(r.title)}</h3><p>${escape(r.ingredients.map(i=>i.name).slice(0,4).join(' · '))}${r.ingredients.length>4?'…':''}</p><span class="recipe-bottom">${r.ingredients.length} ingredients · ${number(r.total)} ${r.unit}<span aria-hidden="true">↗</span></span></a>`).join('')||'<p class="small">No formula matches that search.</p>';
+}
+$('#recipe-search').oninput=renderRecipes;$('#recipe-filter').onchange=renderRecipes;
+
+function renderRecipe(id){
+  const r=recipes.find(r=>r.id===id);$('#formula-overview').hidden=Boolean(r);$('#recipe-detail').hidden=!r;if(!r)return;
+  $('#recipe-detail').innerHTML=`<a class="back-link" href="#formulas">← All formulas</a><article class="recipe-article"><span class="tag">${r.group} formula ${r.number}</span><h2>${escape(r.title)}</h2><p class="guide-intro">Source concentrate: ${number(r.total)} ${r.unit} · ${r.ingredients.length} ingredients</p><div class="recipe-scale"><label>Scale concentrate to (${r.unit})<input id="recipe-target" type="number" step="any" min="0.000001" value="${r.total}"></label><button class="primary" id="recipe-to-notebook">Use in notebook ↗</button></div><p id="recipe-scale-status" class="small" aria-live="polite"></p><div class="native-table-wrap"><table class="native-table"><thead><tr><th>Material as listed</th>${r.group==='Professional'?'<th>Source role</th>':''}<th>Original (${r.unit})</th><th>Scaled (${r.unit})</th></tr></thead><tbody id="recipe-amounts"></tbody></table></div><div class="guide-callout">${escape(r.note)}</div>${r.baseNote?`<h3>Base in the source example</h3><p>${escape(r.baseNote)}</p>`:''}<p class="small">Amounts above are the aromatic concentrate. Scaling preserves the source measurement basis; drops, milliliters and grams are not interchangeable. Verify material identity, stock strength and suitability for the intended finished product before use.</p><div class="source-row"><span>Fragrance Formulas · printed page ${r.sourcePage}</span>${sourceButton(recipeSource,r.pdfPage)}</div></article>`;
+  function update(){try{const target=Number($('#recipe-target').value);const a=scale(target,r.ingredients.map(i=>i.amount));$('#recipe-amounts').innerHTML=r.ingredients.map((i,n)=>`<tr><td>${escape(i.name)}</td>${r.group==='Professional'?`<td>${i.note}</td>`:''}<td>${number(i.amount)}</td><td class="scaled-amount">${number(a[n])}</td></tr>`).join('');$('#recipe-scale-status').textContent=`Scale factor ${number(target/r.total)}× · Total ${number(target)} ${r.unit}${r.unit==='drops'?' · Fractional drops are mathematical results, not exact dispensing instructions.':''}`;$('#recipe-to-notebook').disabled=false;}catch{$('#recipe-amounts').replaceChildren();$('#recipe-scale-status').textContent='Enter a positive concentrate amount.';$('#recipe-to-notebook').disabled=true;}}
+  $('#recipe-target').oninput=update;update();
+  $('#recipe-to-notebook').onclick=()=>{window.dispatchEvent(new CustomEvent('course-formula-selected',{detail:{...r,target:Number($('#recipe-target').value),source:recipeSource}}));location.hash='#notebook';};
+}
+
+function routeContent(){const [section,id]=location.hash.slice(1).split('/');if(section==='learn'||!section)renderLesson(id);if(section==='reference')renderReference(id);if(section==='formulas')renderRecipe(id);}
+window.addEventListener('hashchange',routeContent);
+document.addEventListener('click',e=>{const b=e.target.closest('[data-source]');if(b)window.dispatchEvent(new CustomEvent('open-course-source',{detail:{filename:b.dataset.source,page:Number(b.dataset.page)}}));});
+renderReference();routeContent();
+try{const r=await fetch('formulas.json');if(!r.ok)throw Error();recipes=(await r.json()).formulas;renderRecipes();routeContent();}catch{$('#recipe-count').textContent='The formula collection could not load. Refresh to try again.';}

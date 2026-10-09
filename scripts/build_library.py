@@ -13,7 +13,7 @@ source = args.source.resolve()
 assets = project / 'assets' / 'library'
 assets.mkdir(parents=True, exist_ok=True)
 allowed = {'.pdf', '.docx', '.xlsx', '.numbers', '.png', '.jpg', '.jpeg', '.webp'}
-files = sorted(p for p in source.rglob('*') if p.is_file() and p.suffix.lower() in allowed and project not in p.parents and not p.name.startswith(('library-complete-', 'library-reader-')) and not any(part.startswith('.') for part in p.relative_to(source).parts))
+files = sorted(p for p in source.rglob('*') if p.is_file() and p.suffix.lower() in allowed and project not in p.parents and not p.name.startswith(('library-complete-', 'library-reader-', 'course-native-')) and not any(part.startswith('.') for part in p.relative_to(source).parts))
 items, unique = [], {}
 for p in files:
     raw = p.read_bytes()

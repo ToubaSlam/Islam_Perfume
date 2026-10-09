@@ -19,3 +19,11 @@ The liquid spreadsheet uses 22 drops/mL; the app makes this estimate adjustable.
 ## Refresh the course library
 
 Run `python scripts/build_library.py --source "D:/MyApps/Perfume"` (requires PyMuPDF, Pillow and openpyxl). The generator scans supported documents and images outside this project folder, copies originals, deduplicates identical files and generates page images, covers and `library.json`. Review the manifest before committing new course files. Public deployment copies only app files and `assets/`.
+
+## Native course content
+
+The default Learn page contains edited study lessons covering the supplied Artisan Perfumery ebook. Reference guides rebuild the fragrance wheel, note pyramid, concentration chart and dilution sheet as native HTML/SVG tools. Course formulas contains 55 artisan and 6 professional recipes visually transcribed from the supplied page images; ingredients are searchable, amounts scale in the original unit, and a recipe can open as a new notebook draft. Every lesson and recipe links to its source page.
+
+`course-data.js` contains the edited lesson and reference data. `scripts/build_formulas.py` contains the reviewed recipe transcription and generates `formulas.json`. Ambiguous source names (including “Brasil” and “Fruity violate AC”), missing material types, mixed-unit recipes and arithmetic discrepancies are labeled rather than silently resolved. Professional note roles follow the source, even when unconventional. Artisan note roles are Unassigned because the source does not provide them. Volume/drop recipes are never automatically treated as mass formulas. Existing notebook records without a unit still load as grams.
+
+The native dilution reference identifies the supplied sheet's broad ranges as source statements, not universal safe-use limits. IFRA's official guidance is linked for finished-product restrictions. Lesson notes do not reproduce unsupported therapeutic or safety guarantees from the course. The original source files remain accessible for comparison.

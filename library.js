@@ -19,3 +19,10 @@ else $('#reader-content').innerHTML='<div class="reader-empty"><span>▦</span><
 $('#reader-close').onclick=()=>dialog.close();dialog.addEventListener('close',()=>{request++;document.body.classList.remove('reader-open');$('#reader-content').replaceChildren();opener?.focus();});
 $('#page-prev').onclick=()=>move(page-1);$('#page-next').onclick=()=>move(page+1);$('#reader-page').onchange=e=>{const n=Number(e.target.value);if(Number.isInteger(n)&&n>=1&&n<=current.pages.length)move(n);else e.target.value=page;};$('#reader-zoom').onclick=()=>{const on=$('#reader-content').classList.toggle('zoomed');$('#reader-zoom').setAttribute('aria-pressed',on);$('#reader-zoom').textContent=on?'Fit page':'Zoom in';};dialog.addEventListener('keydown',e=>{if(e.target.matches('input'))return;if(e.key==='ArrowRight'){e.preventDefault();move(page+1);}if(e.key==='ArrowLeft'){e.preventDefault();move(page-1);}});
 try{const r=await fetch('library.json');if(!r.ok)throw Error();items=(await r.json()).items;render();}catch{$('#library-status').textContent='The course library could not load. Refresh the page to try again.';$('#library-count').textContent='Unavailable';}
+
+window.addEventListener('open-course-source', e => {
+  const item = items.find(i => i.filename === e.detail.filename);
+  if (!item) return;
+  open(item, document.activeElement);
+  if (item.pages && Number.isInteger(e.detail.page)) move(e.detail.page);
+});
