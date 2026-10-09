@@ -62,17 +62,25 @@ const observer=new MutationObserver(refresh);
 function apply(){
   root.lang=language;root.dir=language==='ar'?'rtl':'ltr';root.dataset.theme=theme;
   document.querySelector('link[href="light.css"]').disabled=theme==='dark';
-  document.querySelectorAll('[data-language-select]').forEach(e=>e.value=language);
-  document.querySelectorAll('[data-theme-select]').forEach(e=>e.value=theme);
+  document.querySelectorAll('[data-language-toggle]').forEach(e=>{
+    e.textContent=language==='en'?'AR':'EN';
+    e.setAttribute('aria-label',language==='en'?'Switch to Arabic':'التبديل إلى الإنجليزية');
+  });
+  document.querySelectorAll('[data-theme-toggle]').forEach(e=>{
+    e.textContent=theme==='light'?'DARK':'LIGHT';
+    e.setAttribute('aria-label',language==='ar'?(theme==='light'?'تفعيل المظهر الداكن':'تفعيل المظهر الفاتح'):(theme==='light'?'Switch to dark mode':'Switch to light mode'));
+  });
   document.querySelector('meta[name="theme-color"]').content=theme==='dark'?'#10121c':'#dce7ef';
   refresh();
 }
-const controls=()=>`<div class="preferences" aria-label="Display settings"><label><span>Language</span><select data-language-select aria-label="Language"><option value="en" lang="en" data-no-translate>English</option><option value="ar" lang="ar" data-no-translate>العربية</option></select></label><label><span>Appearance</span><select data-theme-select aria-label="Appearance"><option value="light">Light</option><option value="dark">Dark</option></select></label></div>`;
+const controls=()=>`<div class="preferences" aria-label="Display settings"><button class="preference-toggle secondary" type="button" data-language-toggle data-no-translate>AR</button><button class="preference-toggle secondary" type="button" data-theme-toggle data-no-translate>DARK</button></div>`;
 document.querySelector('main>header').insertAdjacentHTML('beforeend',controls());
 document.querySelector('#login-form')?.insertAdjacentHTML('afterbegin',controls());
-document.addEventListener('change',e=>{
-  if(e.target.matches('[data-language-select]'))language=e.target.value;
-  else if(e.target.matches('[data-theme-select]'))theme=e.target.value;
+document.addEventListener('click',e=>{
+  const button=e.target.closest('[data-language-toggle],[data-theme-toggle]');
+  if(!button)return;
+  if(button.hasAttribute('data-language-toggle'))language=language==='en'?'ar':'en';
+  else if(button.hasAttribute('data-theme-toggle'))theme=theme==='light'?'dark':'light';
   else return;
   try{localStorage.setItem('atelier-language',language);localStorage.setItem('atelier-theme',theme);}catch{}
   apply();

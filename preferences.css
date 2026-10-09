@@ -1,7 +1,6 @@
 /* Theme-independent controls and section navigation. */
 .preferences{display:flex;gap:12px;align-items:center;letter-spacing:0;flex-shrink:0}
-.preferences label{display:grid;gap:4px;margin:0;font-size:11px;color:var(--muted)}
-.preferences select{font-size:13px;margin:0;padding:8px 25px 8px 10px;min-height:38px;width:auto;max-width:140px}
+.preference-toggle{font-size:12px;font-weight:700;letter-spacing:1px;padding:10px 14px;min-height:42px;min-width:48px;line-height:1;direction:ltr}
 main>header{gap:16px;height:auto;min-height:84px;padding-block:16px;flex-wrap:wrap}
 main>header .pill{margin-inline-start:auto}
 #login .preferences{justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--line)}
@@ -13,7 +12,6 @@ main>header .pill{margin-inline-start:auto}
 html[data-theme=dark] #calculators .tabs,html[data-theme=dark] .reference-nav,html[data-theme=dark] .library-filters{background:#1c2032f5;box-shadow:0 6px 18px #0003}
 html[data-theme=dark] .reference-nav a{display:block;color:#b9c0d6}
 html[data-theme=dark] .reference-nav a.active{color:#e0d7ff;background:#b4a0ff20}
-html[data-theme=dark] .preferences select{background:#202437}
 .source-language-note{margin-block:18px;font-size:13px;line-height:1.8;color:var(--muted)}
 html[lang=ar] body{font-family:Tahoma,"Noto Sans Arabic",Arial,sans-serif}
 html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] .pyramid-tier-labels,html[lang=ar] .pyramid-family-labels{font-family:Tahoma,"Noto Sans Arabic",Arial,sans-serif;letter-spacing:0}
@@ -32,4 +30,4 @@ html[dir=rtl] .olfactory-diagram svg{direction:ltr}
 html[lang=ar] .pyramid-family-labels{font-size:20px;font-style:normal}
 @media(max-width:1250px){.calc-layout{grid-template-columns:1fr}}
 @media(max-width:900px){html[dir=rtl] main{margin-right:205px}}
-@media(max-width:750px){html[dir=rtl] main{margin-right:91px}main>header .pill{display:none}main>header{align-items:flex-start;gap:10px}main>header>span:first-child{max-width:none;width:100%}.preferences{gap:8px;width:100%;justify-content:space-between}.preferences select{max-width:120px;padding:8px;min-width:85px}#calculators .tabs,.reference-nav,.library-filters{top:8px;gap:5px;padding:7px}#calculators .tabs button,.reference-nav a,.library-filters button{font-size:13px;padding:10px 12px;min-height:42px}.reference-nav a{display:block}html[dir=rtl] #toast{left:16px;right:107px}.source-language-note{font-size:12px}}
+@media(max-width:750px){html[dir=rtl] main{margin-right:91px}main>header .pill{display:none}main>header{align-items:flex-start;gap:10px}main>header>span:first-child{max-width:none;width:100%}.preferences{gap:8px;width:auto;justify-content:flex-start;margin-inline-start:auto}.preference-toggle{padding:10px 12px}#calculators .tabs,.reference-nav,.library-filters{top:8px;gap:5px;padding:7px}#calculators .tabs button,.reference-nav a,.library-filters button{font-size:13px;padding:10px 12px;min-height:42px}.reference-nav a{display:block}html[dir=rtl] #toast{left:16px;right:107px}.source-language-note{font-size:12px}}
