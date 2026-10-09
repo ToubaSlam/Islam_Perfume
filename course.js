@@ -1,3 +1,4 @@
+import {searchText} from './preferences.js';
 import { lessons, families, concentrations, courseSource } from './course-data.js';
 import { scale } from './math.js';
 
@@ -15,7 +16,7 @@ $('#learn').innerHTML = `<p class="eyebrow">LEARN / ARTISAN PERFUMERY</p><h1>Fro
 
 function renderLessons() {
   const q = $('#lesson-search').value.toLowerCase().trim();
-  const matches = lessons.filter(l => JSON.stringify(l).toLowerCase().includes(q));
+  const matches = lessons.filter(l => searchText(l).includes(q));
   const groups = [...new Set(matches.map(l => l.group))];
   $('#lesson-groups').innerHTML = groups.map((g,index) => `<div class="lesson-group"><div class="group-label"><span>${String(index+1).padStart(2,'0')}</span><h2>${g}</h2></div><div class="lesson-grid">${matches.filter(l=>l.group===g).map(l=>`<a class="lesson-card" href="#learn/${l.id}"><span class="eyebrow">${l.pages.length===1?'PAGE':'PAGES'} ${l.pages.join(', ')}</span><h3>${l.title}</h3><p>${l.summary}</p><span class="lesson-open">Read lesson <span aria-hidden="true">↗</span></span></a>`).join('')}</div></div>`).join('') || '<p class="small">No lessons found. Try another word from the course.</p>';
 }
@@ -48,7 +49,7 @@ function renderReference(id='wheel') {
   $('.reference-nav').querySelectorAll('a').forEach(a=>{const active=a.hash===`#reference/${id}`;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   const box=$('#reference-content');
   if(id==='wheel'){
-    box.innerHTML=`<article class="guide-card"><h2>The fragrance wheel</h2><p class="guide-intro">View the original course diagram. Choose a subgroup below to explore its character and neighbors.</p>${originalWheel()}<div id="family-description" class="original-wheel-description" aria-live="polite"></div><div class="family-buttons">${families.map((f,i)=>`<button data-family="${i}" style="--family-color:${f.color}" aria-pressed="${i===selectedFamily}"><span>${i+1}</span>${f.name}</button>`).join('')}</div><div class="guide-callout">Try neighboring families for shared qualities, opposite areas for contrast, or a triangle such as Citrus / Soft Floral / Woody Oriental. These are creative prompts from the course.</div><p class="small">The source calls one family “Oriental”; Amber / Oriental appears here so both terms are recognizable. Classifications are descriptive and can vary.</p>${sourceButton('Guide - Fragrance Wheel.pdf',1,'Compare the original wheel')}</article>`;
+    box.innerHTML=`<article class="guide-card"><h2>The fragrance wheel</h2><p class="guide-intro">View the original course diagram. Choose a subgroup below to explore its character and neighbors.</p>${originalWheel()}<p class="source-language-note">Original artwork is preserved in its source language.</p><div id="family-description" class="original-wheel-description" aria-live="polite"></div><div class="family-buttons">${families.map((f,i)=>`<button data-family="${i}" style="--family-color:${f.color}" aria-pressed="${i===selectedFamily}"><span>${i+1}</span>${f.name}</button>`).join('')}</div><div class="guide-callout">Try neighboring families for shared qualities, opposite areas for contrast, or a triangle such as Citrus / Soft Floral / Woody Oriental. These are creative prompts from the course.</div><p class="small">The source calls one family “Oriental”; Amber / Oriental appears here so both terms are recognizable. Classifications are descriptive and can vary.</p>${sourceButton('Guide - Fragrance Wheel.pdf',1,'Compare the original wheel')}</article>`;
     renderFamily();
   }
   if(id==='pyramid'){
@@ -74,7 +75,7 @@ $('#formulas').innerHTML=`<p class="eyebrow">FORMULAS / FROM YOUR EBOOK</p><h1>A
 
 function renderRecipes(){
   const q=$('#recipe-search').value.toLowerCase().trim(),group=$('#recipe-filter').value;
-  const shown=recipes.filter(r=>(group==='All'||r.group===group)&&`${r.title} ${r.ingredients.map(i=>i.name).join(' ')}`.toLowerCase().includes(q));
+  const shown=recipes.filter(r=>(group==='All'||r.group===group)&&searchText(r).includes(q));
   $('#recipe-count').textContent=`${shown.length} formulas`;
   $('#recipe-grid').innerHTML=shown.map(r=>`<a class="recipe-card" href="#formulas/${r.id}"><div><span class="tag">${r.group} ${r.number}</span><span class="recipe-unit">${r.unit}</span></div><h3>${escape(r.title)}</h3><p>${escape(r.ingredients.map(i=>i.name).slice(0,4).join(' · '))}${r.ingredients.length>4?'…':''}</p><span class="recipe-bottom">${r.ingredients.length} ingredients · ${number(r.total)} ${r.unit}<span aria-hidden="true">↗</span></span></a>`).join('')||'<p class="small">No formula matches that search.</p>';
 }

@@ -1,0 +1,35 @@
+/* Theme-independent controls and section navigation. */
+.preferences{display:flex;gap:12px;align-items:center;letter-spacing:0;flex-shrink:0}
+.preferences label{display:grid;gap:4px;margin:0;font-size:11px;color:var(--muted)}
+.preferences select{font-size:13px;margin:0;padding:8px 25px 8px 10px;min-height:38px;width:auto;max-width:140px}
+main>header{gap:16px;height:auto;min-height:84px;padding-block:16px;flex-wrap:wrap}
+main>header .pill{margin-inline-start:auto}
+#login .preferences{justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--line)}
+#calculators{display:block}
+#calculators .tabs,.reference-nav,.library-filters{position:sticky;top:12px;z-index:4;display:flex;flex-direction:row;flex-wrap:nowrap;gap:8px;align-items:center;overflow-x:auto;border:1px solid var(--line);border-radius:13px;padding:9px;margin:0 0 24px;scroll-padding:12px;scrollbar-width:thin;backdrop-filter:blur(12px)}
+#calculators .tabs button,.reference-nav a,.library-filters button{flex:0 0 auto;white-space:nowrap;text-align:center;padding:12px 16px;min-height:44px;border-radius:9px;margin:0;font-size:14px}
+.reference-layout{display:block}.library-tools{display:contents}.library-tools>label{margin:20px 0}
+.calc-layout{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+html[data-theme=dark] #calculators .tabs,html[data-theme=dark] .reference-nav,html[data-theme=dark] .library-filters{background:#1c2032f5;box-shadow:0 6px 18px #0003}
+html[data-theme=dark] .reference-nav a{display:block;color:#b9c0d6}
+html[data-theme=dark] .reference-nav a.active{color:#e0d7ff;background:#b4a0ff20}
+html[data-theme=dark] .preferences select{background:#202437}
+.source-language-note{margin-block:18px;font-size:13px;line-height:1.8;color:var(--muted)}
+html[lang=ar] body{font-family:Tahoma,"Noto Sans Arabic",Arial,sans-serif}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] .pyramid-tier-labels,html[lang=ar] .pyramid-family-labels{font-family:Tahoma,"Noto Sans Arabic",Arial,sans-serif;letter-spacing:0}
+html[lang=ar] h1{line-height:1.5;font-size:clamp(27px,2.8vw,39px)}
+html[lang=ar] .eyebrow,html[lang=ar] header,html[lang=ar] .brand,html[lang=ar] .brand span:last-child,html[lang=ar] .material-card dt{letter-spacing:0}
+html[dir=rtl] aside{inset:0 0 0 auto;border-right:0;border-left:1px solid var(--line)}
+html[dir=rtl] main{margin-left:0;margin-right:246px}
+html[dir=rtl] aside nav a.active{box-shadow:inset -3px 0 var(--violet)}
+html[dir=rtl] .source-link,html[dir=rtl] .native-table td,html[dir=rtl] .native-table th,html[dir=rtl] th,html[dir=rtl] .resource-open,html[dir=rtl] .sheet-preview td,html[dir=rtl] .sheet-preview th{text-align:right}
+html[dir=rtl] #toast{right:auto;left:25px}
+html[dir=rtl] .guide-callout{border-left:0;border-right:3px solid var(--violet);border-radius:10px 0 0 10px}
+html[dir=rtl] .family-buttons button{text-align:right}
+html[dir=rtl] .material-card dl{padding-inline:18px}
+input[type=number],input[name=user],input[name=pass],code,[data-no-translate]{direction:ltr;unicode-bidi:plaintext}
+html[dir=rtl] .olfactory-diagram svg{direction:ltr}
+html[lang=ar] .pyramid-family-labels{font-size:20px;font-style:normal}
+@media(max-width:1250px){.calc-layout{grid-template-columns:1fr}}
+@media(max-width:900px){html[dir=rtl] main{margin-right:205px}}
+@media(max-width:750px){html[dir=rtl] main{margin-right:91px}main>header .pill{display:none}main>header{align-items:flex-start;gap:10px}main>header>span:first-child{max-width:none;width:100%}.preferences{gap:8px;width:100%;justify-content:space-between}.preferences select{max-width:120px;padding:8px;min-width:85px}#calculators .tabs,.reference-nav,.library-filters{top:8px;gap:5px;padding:7px}#calculators .tabs button,.reference-nav a,.library-filters button{font-size:13px;padding:10px 12px;min-height:42px}.reference-nav a{display:block}html[dir=rtl] #toast{left:16px;right:107px}.source-language-note{font-size:12px}}
