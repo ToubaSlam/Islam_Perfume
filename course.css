@@ -8,5 +8,5 @@ aside{overflow-y:auto}aside>.eyebrow{margin-top:32px}aside nav{gap:6px}aside nav
 /* Course-style olfactory pyramid, kept as vector artwork at every screen size. */
 .olfactory-diagram{margin:26px 0 20px;border-radius:12px;overflow:hidden;border:1px solid #ffffff24;max-width:850px}.olfactory-diagram svg{display:block;width:100%;height:auto}.pyramid-tier-labels{fill:#fff;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:700;font-size:31px}.pyramid-tier-labels .pyramid-time{font-size:29px}.pyramid-family-labels{fill:#211b3c;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:700;font-size:23px}
 
-/* Original photographic course wheel with accessible interactive segments. */
-.wheel-wrap:has(.photo-family-wheel){background:#fff;border-radius:50%;overflow:hidden}.photo-family-wheel path:hover{fill:#ffffff20}.photo-family-wheel path[aria-pressed=true]{stroke:#493773;stroke-width:4;filter:none}.photo-family-wheel path:focus-visible{stroke:#de744a;stroke-width:7}.photo-family-wheel+#wheel-center{inset:34%;gap:5px;color:#211b3c}.photo-family-wheel+#wheel-center span{color:#6d617e;font-size:10px}.photo-family-wheel+#wheel-center strong{font-size:clamp(12px,1.25vw,20px);color:#211b3c}.wheel-wrap:has(.photo-family-wheel){max-width:520px;margin-inline:auto;width:100%}
+/* Display the complete original artwork without crops or overlays. */
+.original-wheel{display:block;margin:24px 0;background:#fff}.original-wheel img{display:block;width:100%;height:auto}.original-wheel-description{margin:24px 0}

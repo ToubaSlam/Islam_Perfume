@@ -33,19 +33,12 @@ function renderLesson(id) {
 
 $('#reference').innerHTML = `<p class="eyebrow">REFERENCE / THE ESSENTIALS</p><h1>See how the pieces fit.</h1><p class="intro">Explore the diagrams and numbers from your course as working reference tools.</p><div class="reference-layout"><nav class="reference-nav" aria-label="Reference guide"><a href="#reference/wheel">Fragrance wheel</a><a href="#reference/pyramid">Note pyramid</a><a href="#reference/concentration">Concentration</a><a href="#reference/dilution">Dilution guide</a></nav><div id="reference-content"></div></div>`;
 
-function wheelSVG() {
-  const point=(r,a)=>[750+r*Math.cos(a),422+r*Math.sin(a)];
-  return `<svg class="family-wheel photo-family-wheel" viewBox="330 0 840 844" role="group" aria-label="Photographic fragrance wheel with fourteen selectable subgroups"><image href="assets/library/ad914a15c76c9cde/page-1.webp" width="1500" height="844"/>${families.map((f,i)=>{
-    // The source starts with Floral Oriental at twelve o'clock.
-    const start=(i-2)*2*Math.PI/14-Math.PI/2,end=(i-1)*2*Math.PI/14-Math.PI/2;
-    const [a,b,c,d]=[point(410,start),point(410,end),point(143,end),point(143,start)];
-    return `<path d="M ${a} A 410 410 0 0 1 ${b} L ${c} A 143 143 0 0 0 ${d} Z" fill="transparent" role="button" tabindex="0" aria-label="${f.name}" aria-pressed="${i===selectedFamily}" data-family="${i}"><title>${f.name} ? select to explore</title></path>`;
-  }).join('')}</svg>`;
+function originalWheel() {
+  return `<a class="original-wheel" href="assets/library/ad914a15c76c9cde/page-1.webp" target="_blank" rel="noopener" aria-label="Open the original fragrance wheel at full size"><img src="assets/library/ad914a15c76c9cde/page-1.webp" width="1500" height="844" alt="Original course fragrance wheel showing floral, oriental, woody and fresh families with ingredient photographs"></a>`;
 }
 
 function renderFamily() {
   const f=families[selectedFamily];
-  $('#wheel-center').innerHTML=`<span>${f.group}</span><strong>${f.name}</strong>`;
   $('#family-description').innerHTML=`<span class="tag" style="--accent:${f.color}">${f.group}</span><h3>${f.name}</h3><p>${f.description}</p><dl><dt>Course examples</dt><dd>${f.examples}</dd><dt>Neighbors to compare</dt><dd>${f.pair}</dd></dl>`;
   $('#reference-content').querySelectorAll('[data-family]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.family)===selectedFamily));
 }
@@ -55,7 +48,7 @@ function renderReference(id='wheel') {
   $('.reference-nav').querySelectorAll('a').forEach(a=>{const active=a.hash===`#reference/${id}`;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   const box=$('#reference-content');
   if(id==='wheel'){
-    box.innerHTML=`<article class="guide-card"><h2>The fragrance wheel</h2><p class="guide-intro">Select a segment or a subgroup below to explore its character and neighbors.</p><div class="wheel-layout"><div class="wheel-wrap">${wheelSVG()}<div id="wheel-center"></div></div><div id="family-description" aria-live="polite"></div></div><div class="family-buttons">${families.map((f,i)=>`<button data-family="${i}" style="--family-color:${f.color}" aria-pressed="${i===selectedFamily}"><span>${i+1}</span>${f.name}</button>`).join('')}</div><div class="guide-callout">Try neighboring families for shared qualities, opposite areas for contrast, or a triangle such as Citrus / Soft Floral / Woody Oriental. These are creative prompts from the course.</div><p class="small">The source calls one family “Oriental”; Amber / Oriental appears here so both terms are recognizable. Classifications are descriptive and can vary.</p>${sourceButton('Guide - Fragrance Wheel.pdf',1,'Compare the original wheel')}</article>`;
+    box.innerHTML=`<article class="guide-card"><h2>The fragrance wheel</h2><p class="guide-intro">View the original course diagram. Choose a subgroup below to explore its character and neighbors.</p>${originalWheel()}<div id="family-description" class="original-wheel-description" aria-live="polite"></div><div class="family-buttons">${families.map((f,i)=>`<button data-family="${i}" style="--family-color:${f.color}" aria-pressed="${i===selectedFamily}"><span>${i+1}</span>${f.name}</button>`).join('')}</div><div class="guide-callout">Try neighboring families for shared qualities, opposite areas for contrast, or a triangle such as Citrus / Soft Floral / Woody Oriental. These are creative prompts from the course.</div><p class="small">The source calls one family “Oriental”; Amber / Oriental appears here so both terms are recognizable. Classifications are descriptive and can vary.</p>${sourceButton('Guide - Fragrance Wheel.pdf',1,'Compare the original wheel')}</article>`;
     renderFamily();
   }
   if(id==='pyramid'){
