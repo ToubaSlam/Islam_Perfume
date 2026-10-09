@@ -26,7 +26,8 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir public-site
-          cp index.html style.css theme.css app.js math.js icon.svg public-site/
+          cp index.html style.css theme.css library.css app.js math.js library.js library.json icon.svg public-site/
+          cp -R assets public-site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public-site
