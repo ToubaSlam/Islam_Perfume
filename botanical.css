@@ -1,0 +1,149 @@
+/* Colorful Learning Desk — botanical, text-led, and usable in both themes. */
+:root{--paper:#faf6ed;--ink:#093d36;--muted:#47645b;--line:#d8dfd0;--surface:#fffaf0;--surface-alt:#f1eee2;--soft-mint:#e0efd3;--soft-blue:#d8edf8;--soft-rose:#fbdcd9;--soft-yellow:#fcf0b6;--soft-lilac:#ece2f5;--soft-peach:#fbe3d0;--mint:#126855;--violet:#725190;--coral:#f26f4e;--gold:#a6771d;--leaf-fill:#c5dab9;--flower-color:#ed7d8d;--site-header-height:122px}
+html[data-theme=dark]{color-scheme:dark;--paper:#142721;--ink:#f4eedf;--muted:#b0c5b5;--line:#3b5548;--surface:#1e342a;--surface-alt:#263d32;--soft-mint:#2b4637;--soft-blue:#263e4a;--soft-rose:#4a3337;--soft-yellow:#49422a;--soft-lilac:#39334a;--soft-peach:#49392d;--mint:#a5d5bb;--violet:#c7a8e1;--coral:#f29b80;--gold:#dbc37d;--leaf-fill:#46634c;--flower-color:#d8909d}
+body{background:radial-gradient(ellipse at 0 30%,color-mix(in srgb,var(--soft-yellow) 24%,transparent),transparent 42%),var(--paper);color:var(--ink);font-family:'DM Sans',Tahoma,sans-serif;line-height:1.6}
+aside.site-header,html[dir=rtl] aside.site-header{position:sticky;inset:auto;top:0;width:100%;height:auto;max-height:none;border:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;gap:8px 20px;padding:17px max(24px,calc((100vw - 1400px)/2));background:color-mix(in srgb,var(--paper) 95%,transparent);backdrop-filter:blur(14px);z-index:10;overflow:visible}
+.site-header .brand{grid-column:2;grid-row:1;align-self:center;text-align:center;font-family:Georgia,'Times New Roman',serif;letter-spacing:-1.3px;white-space:nowrap;color:var(--ink);line-height:1.25}
+.site-header .brand .mark{display:none}
+.site-header .brand .brand-title{display:inline;margin:0;font-size:clamp(24px,2.3vw,34px);font-weight:700;line-height:1.25;letter-spacing:-1.3px}
+.site-header .brand span:last-child{display:inline;font-family:Georgia,serif;font-size:18px;font-style:italic;color:#cf5c7a;margin-inline-start:10px;letter-spacing:0}
+.header-kicker{grid-column:1;grid-row:1;align-self:center;margin:0;font-size:10px;font-weight:600;letter-spacing:2px;color:var(--muted);line-height:1.8}
+.header-controls{grid-column:3;grid-row:1;display:flex;gap:9px;align-items:center;justify-content:flex-end}
+.header-controls .preferences{order:0;gap:8px;margin:0}
+.header-controls #logout{order:1;margin:0;background:transparent;border:1px solid var(--line);border-radius:50%;width:34px;height:34px;min-width:34px;padding:0;color:var(--muted);font-size:18px}
+.site-header .preference-toggle{border-radius:25px;background:var(--surface-alt);border-color:transparent;color:var(--ink);font-size:11px;min-height:36px;padding:9px 15px}
+.site-header [data-theme-toggle]{background:var(--ink);color:var(--paper)}
+.site-header nav{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:nowrap;gap:22px;align-items:center;justify-content:center;margin:0;overflow:auto;scrollbar-width:none}
+.site-header nav::-webkit-scrollbar{display:none}
+.site-header nav a{flex:0 0 auto;display:block;text-align:center;min-height:0;border:0;border-radius:0;padding:7px 4px;font-size:14px;font-weight:400;white-space:nowrap;background:none;color:var(--ink);box-shadow:none;line-height:1.5}
+.site-header nav a.active,.site-header nav a[href='#notebook'].active,.site-header nav a[href='#calculators'].active,html[dir=rtl] aside.site-header nav a.active{background:none;color:var(--ink);border:0;box-shadow:inset 0 -2px var(--mint);font-weight:600}
+.site-header nav a:hover{background:none;color:var(--mint);outline:0}
+.site-header .nav-icon{display:none}
+main,html[dir=rtl] main{width:min(1400px,calc(100% - 48px));max-width:1400px;margin:0 auto;padding:0}
+main>section{padding-top:30px;min-height:calc(100vh - var(--site-header-height) - 85px);scroll-margin-top:calc(var(--site-header-height) + 18px)}
+main>section#learn{padding-top:18px}
+h1,h2,h3{color:var(--ink)}
+h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:600;letter-spacing:-1px}
+h1{font-size:clamp(32px,3.5vw,49px);line-height:1.25;max-width:950px}
+h2{font-size:30px}
+.eyebrow{color:var(--mint);letter-spacing:1.8px}
+.intro,.small,.guide-intro,.lesson-block p,.guide-card>p,.recipe-article>p,.article-heading>p,.lesson-card p,.recipe-card p,.material-card dd,.saved p,#family-description p,#family-description dd{color:var(--muted)}
+.primary,.secondary,.file-button{border-radius:24px;box-shadow:none}
+.primary{background:var(--mint);color:var(--paper);font-weight:600;border:1px solid transparent;padding:12px 22px;line-height:1.4}
+.primary:hover{filter:none;background:color-mix(in srgb,var(--mint) 85%,var(--ink))}
+.primary:focus-visible,.secondary:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:4px}
+.secondary,.file-button{background:var(--surface-alt);color:var(--ink);border-color:var(--line)}
+.secondary:hover,.file-button:hover{background:var(--soft-mint)}
+.coral-button{background:#f27653;color:#fff}.coral-button:hover{background:#dc6241}
+.lab-icon{width:40px;height:40px;display:block;flex:0 0 auto}
+.botanical-sprig{width:75px;height:135px;pointer-events:none;color:var(--mint)}
+.botanical-blossom{width:40px;height:40px;pointer-events:none}
+.desk-hero{display:grid;grid-template-columns:minmax(0,3.4fr) repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+.desk-intro{position:relative;overflow:hidden;border-radius:20px;background:var(--soft-peach);padding:29px 40px 28px}
+.desk-intro>.botanical-sprig{position:absolute;bottom:16px;inset-inline-end:-17px;transform:rotate(12deg);opacity:.7}
+.desk-intro>.botanical-blossom{position:absolute;top:24px;inset-inline-end:20px;width:27px;height:27px;opacity:.75}
+.desk-intro .eyebrow{font-size:10px;margin:0 0 12px}
+.desk-intro h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(36px,4.25vw,65px);text-transform:uppercase;font-weight:700;line-height:.99;letter-spacing:-2px;margin:0 0 19px;max-width:650px}
+.hero-mantra{font-size:10px;text-transform:uppercase;letter-spacing:3px;margin:0 0 19px;color:var(--ink)}
+.hero-copy{max-width:430px;color:var(--muted);font-size:15px;line-height:1.7;margin:0 0 25px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;position:relative}
+.hero-actions .primary{display:flex;align-items:center;gap:9px;text-decoration:none;font-family:Georgia,serif;font-size:17px;padding:11px 18px}
+.hero-actions .lab-icon{width:22px;height:22px}
+.desk-stat{border-radius:20px;padding:30px 16px 23px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--ink);text-align:center;transition:transform .18s}
+.desk-stat:hover{transform:translateY(-3px)}
+.mint-tile{background:var(--soft-mint)}.blue-tile{background:var(--soft-blue)}.rose-tile{background:var(--soft-rose)}
+.desk-stat>.lab-icon{width:57px;height:57px;margin-bottom:15px}
+.desk-stat strong{font-family:Georgia,serif;font-size:clamp(38px,4.1vw,64px);line-height:1.05;font-weight:600}
+.desk-stat h2{font-size:24px;letter-spacing:-.5px;margin:0 0 16px}
+.desk-stat p{font-size:13px;line-height:1.65;max-width:165px;color:var(--muted);margin:0}
+.desk-workspace{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:30px;margin:27px 0 22px}
+.desk-discover{padding-inline-start:25px;border-inline-start:1px solid var(--line)}
+.desk-section-title{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}
+.desk-section-title h2{font-size:31px;margin:0 0 4px;letter-spacing:-1px;line-height:1.2}
+.desk-section-title p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+.text-link{background:none;border:0;padding:0;color:var(--mint);font-size:13px;line-height:1.6;text-decoration:underline;text-underline-offset:4px;white-space:nowrap;cursor:pointer}
+.featured-lessons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.featured-lesson{display:flex;flex-direction:column;position:relative;min-width:0;min-height:190px;border-radius:14px;padding:18px 18px 24px;text-decoration:none;color:var(--ink);transition:transform .18s}
+.featured-lesson:hover{transform:translateY(-3px)}
+.tile-0{background:var(--soft-mint)}.tile-1{background:var(--soft-rose)}.tile-2{background:var(--soft-blue)}.tile-3{background:var(--soft-yellow)}.tile-4{background:var(--soft-lilac)}.tile-5{background:var(--soft-peach)}
+.lesson-index{position:absolute;top:14px;inset-inline-start:14px;font-family:Georgia,serif;font-size:14px;opacity:.8}
+.featured-lesson>.lab-icon{width:35px;height:35px;margin-inline-start:30px;margin-bottom:8px}
+.featured-lesson h3{font-family:Georgia,serif;line-height:1.15;font-size:20px;letter-spacing:-.6px;margin:0 0 8px}
+.featured-lesson p{font-size:12px;color:var(--muted);line-height:1.6;margin:0;padding-inline-end:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.circle-arrow{align-self:flex-end;display:grid;place-items:center;background:var(--mint);color:var(--paper);width:31px;height:31px;border-radius:50%;font-size:19px;line-height:1;margin-top:auto;transform:translateY(12px)}
+.tile-1 .circle-arrow{background:#c45277;color:#fff}.tile-2 .circle-arrow{background:#277990;color:#fff}.tile-3 .circle-arrow{background:#997125;color:#fff}.tile-4 .circle-arrow{background:#7e5895;color:#fff}.tile-5 .circle-arrow{background:#cb654c;color:#fff}
+.material-spotlight{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:18px 20px;align-items:center}
+.bergamot-art{width:130px;height:130px;border-radius:50%;background:var(--soft-mint)}
+.material-spotlight .eyebrow{font-size:9px;letter-spacing:1px;margin:0 0 6px}
+.material-spotlight h3,.notebook-shortcut h3{font-family:Georgia,serif;font-weight:600;font-size:26px;letter-spacing:-.7px;margin:0 0 9px;line-height:1.2}
+.material-spotlight dl{margin:0;display:flex;gap:18px;flex-wrap:wrap;font-size:12px}
+.material-spotlight dl>div{display:flex;gap:6px}.material-spotlight dt{font-weight:600}.material-spotlight dd{margin:0;color:var(--muted)}
+.material-spotlight p{font-size:12px;line-height:1.7;color:var(--muted);margin:10px 0}
+.material-spotlight .spotlight-botanical{font-size:11px;font-style:italic;margin:8px 0}
+.notebook-shortcut{display:flex;position:relative;overflow:hidden;gap:16px;margin-top:16px;border-radius:16px;background:var(--soft-mint);padding:22px}
+.notebook-shortcut>.lab-icon{width:59px;height:59px}
+.notebook-shortcut p{font-size:13px;color:var(--muted);line-height:1.7;max-width:300px;margin:0 0 15px}
+.notebook-shortcut h3{font-size:27px;padding-inline-end:10px}
+.notebook-shortcut .primary{font-size:12px;display:inline-block;text-decoration:none;padding:9px 17px}
+.notebook-shortcut>.botanical-blossom{position:absolute;inset-inline-end:-4px;top:6px;width:31px;height:31px}
+.desk-calculator{display:grid;grid-template-columns:1fr 2.5fr;align-items:center;gap:25px;border-radius:18px;background:var(--soft-yellow);padding:20px 25px;margin:20px 0 38px}
+.quick-calc-heading{display:flex;gap:14px;align-items:flex-start}.quick-calc-heading>.lab-icon{width:34px;height:34px;margin-top:5px}
+.quick-calc-heading h2{font-size:28px;line-height:1.15;margin:0 0 8px}
+.quick-calc-heading p,.quick-calc-note{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
+.quick-calc-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.quick-calc-tabs a{font-size:12px;white-space:nowrap;display:block;text-align:center;padding:8px 10px;color:var(--ink);text-decoration:none;background:var(--soft-peach);border-radius:10px;line-height:1.5}
+.quick-calc-tabs a:nth-child(3){background:var(--soft-lilac)}.quick-calc-tabs a:nth-child(4){background:var(--soft-mint)}
+.quick-calc-tabs .selected{background:#ef7854;color:#fff}.quick-calc-tabs a:hover{outline:1px solid var(--mint)}
+#desk-quick-calc{display:grid;grid-template-columns:1fr 1fr 2fr;gap:12px;align-items:start}
+#desk-quick-calc label{font-size:11px;margin:0;color:var(--ink)}
+#desk-quick-calc input{margin-top:5px;padding:9px 12px;background:var(--surface);border-color:color-mix(in srgb,var(--ink) 20%,transparent);font-size:16px}
+#desk-quick-results{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-inline-start:1px solid var(--line);padding-inline-start:12px}
+#desk-quick-results>div{display:flex;flex-direction:column;gap:5px}#desk-quick-results span{font-size:11px}#desk-quick-results strong{background:var(--soft-mint);padding:6px 12px;border-radius:9px;font-family:Georgia,serif;font-weight:600;font-size:25px;line-height:1.25;white-space:nowrap}#desk-quick-results small{font-size:13px}
+#desk-quick-results .error{grid-column:1/-1;font-size:12px;margin:4px 0}
+.quick-calc-note{margin-top:8px}
+#course-catalog{scroll-margin-top:calc(var(--site-header-height) + 25px);border-top:1px solid var(--line);padding-top:30px;margin-bottom:30px}
+.catalog-heading{display:flex;gap:20px;align-items:center;justify-content:space-between}.catalog-heading h2{margin:0;font-size:32px}.catalog-heading .course-search{width:340px;margin:0;font-size:12px}
+.lesson-grid,#recipe-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lesson-card,.recipe-card,.card,.guide-card,.lesson-article,.recipe-article,.resource-card,.material-card,.study-reference{background:var(--surface);border-color:var(--line);box-shadow:none}
+.lesson-card:nth-child(6n+1){background:var(--soft-mint)}.lesson-card:nth-child(6n+2){background:var(--soft-rose)}.lesson-card:nth-child(6n+3){background:var(--soft-blue)}.lesson-card:nth-child(6n+4){background:var(--soft-yellow)}.lesson-card:nth-child(6n+5){background:var(--soft-lilac)}.lesson-card:nth-child(6n){background:var(--soft-peach)}
+.lesson-card h3,.recipe-card h3{font-family:Georgia,serif;font-size:22px;color:var(--ink)}
+.lesson-block h3,.material-card strong,.saved h3,.pyramid-copy h3,.article-heading h2{color:var(--ink)}
+.lesson-card:hover,.recipe-card:hover,.resource-card:hover,.material-card:hover,.material-card[open]{border-color:var(--mint)}
+.article-heading{background:var(--soft-peach);border-color:var(--line)}
+.practice-box{background:var(--soft-mint);border-color:var(--line)}.practice-box p{color:var(--muted)}
+.guide-callout{background:var(--soft-lilac);color:var(--muted);border-color:var(--violet)}
+input,select,textarea,.search-label input{color:var(--ink);background:var(--surface);border-color:var(--line);border-radius:9px}
+label,th{color:var(--ink)}input::placeholder,textarea::placeholder{color:color-mix(in srgb,var(--muted) 78%,transparent)}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--mint) 15%,transparent);border-color:var(--mint)}
+.result-card{background:var(--soft-mint);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.result-card h2,.result-row strong{color:var(--ink)}.result-card .small,.result-card .eyebrow,.result-row strong small{color:var(--muted)}.result-row{border-color:var(--line)}
+.principle{background:var(--soft-yellow);border-color:var(--line)}.principle>span,.principle strong{color:var(--ink)}
+.bottle{display:none}
+#calculators .tabs,.reference-nav,.library-filters,html[data-theme=dark] #calculators .tabs,html[data-theme=dark] .reference-nav,html[data-theme=dark] .library-filters{top:calc(var(--site-header-height) + 8px);background:color-mix(in srgb,var(--surface-alt) 97%,transparent);box-shadow:0 3px 12px #14271c0b;border-color:var(--line);z-index:4}
+#calculators .tabs button,.reference-nav a,.library-filters button,html[data-theme=dark] .reference-nav a{background:transparent;color:var(--ink);border-color:transparent}
+#calculators .tabs button:hover,.reference-nav a:hover,.library-filters button:hover{background:var(--soft-mint);color:var(--ink)}
+#calculators .tabs button[aria-selected=true],.reference-nav a.active,.library-filters button[aria-pressed=true],html[data-theme=dark] .reference-nav a.active{background:var(--mint);color:var(--paper);border-color:transparent;box-shadow:none}
+.mini-results>div,.family-buttons button{background:var(--surface-alt);color:var(--ink);border-color:var(--line)}
+.family-buttons button[aria-pressed=true]{background:var(--soft-lilac);border-color:var(--violet);color:var(--ink)}
+.native-table th{background:var(--soft-blue);color:var(--ink)}.native-table td{color:var(--ink)}.native-table th,.native-table td{border-color:var(--line)}
+.concentration-track{background:var(--surface-alt)}.concentration-row h3{color:var(--ink)}
+.tag,.tag:first-child{background:var(--soft-mint);border-color:var(--line);color:var(--mint)}.tag:first-child{background:var(--soft-lilac);color:var(--violet)}.recipe-card .tag{background:var(--soft-rose);color:var(--ink)}
+.resource-cover,.file-cover{background:var(--surface-alt)}.format-badge{background:var(--surface);color:var(--ink);border-color:var(--line)}
+#resource-reader{background:var(--surface);border-color:var(--line)}.reader-toolbar,#reader-content{background:var(--surface-alt)}.sheet-preview table{background:var(--surface)}.sheet-preview td,.sheet-preview th{border-color:var(--line)}.sheet-preview code{color:var(--violet)}
+.material-card dt{color:var(--violet)}
+.materials-table,.sheet-preview{min-height:0;padding-top:0}
+.error,#login-error{color:color-mix(in srgb,var(--coral) 70%,var(--ink))}
+html.locked .site-header{display:none}
+#login{background:radial-gradient(ellipse at 20% 30%,var(--soft-peach),transparent 60%),radial-gradient(ellipse at 80% 80%,var(--soft-mint),transparent 55%),var(--paper)}
+#login form{width:min(410px,100%);padding:30px;border-radius:22px}#login .preferences{justify-content:flex-end}
+footer{margin-top:18px;color:var(--muted);border-color:var(--line);font-size:12px}
+#toast,html[dir=rtl] #toast{background:var(--ink);color:var(--paper);border-color:var(--line);left:auto;right:24px;max-width:calc(100vw - 48px)}
+html[dir=rtl] .hero-mantra,html[dir=rtl] .header-kicker{letter-spacing:0}
+html[dir=rtl] .desk-intro h1{font-family:Tahoma,Arial,sans-serif;text-transform:none;font-size:clamp(32px,3.7vw,53px);line-height:1.35;letter-spacing:0}
+html[dir=rtl] .desk-section-title h2,html[dir=rtl] .featured-lesson h3,html[dir=rtl] .desk-stat h2,html[dir=rtl] .material-spotlight h3,html[dir=rtl] .notebook-shortcut h3,html[dir=rtl] .quick-calc-heading h2,html[dir=rtl] .lesson-card h3,html[dir=rtl] .recipe-card h3{font-family:Tahoma,Arial,sans-serif;letter-spacing:0;line-height:1.5}
+html[dir=rtl] .hero-actions .primary{font-family:Tahoma,Arial,sans-serif;font-size:14px}
+html[dir=rtl] .circle-arrow,html[dir=rtl] .text-link>span,html[dir=rtl] .hero-actions .primary>span:last-child{transform:scaleX(-1)}
+@media(max-width:1150px){.header-kicker{display:none}.site-header .brand{grid-column:1/3;text-align:start;justify-self:start}.site-header .brand .brand-title{font-size:28px}.site-header nav{gap:20px}.desk-hero{grid-template-columns:repeat(3,minmax(0,1fr))}.desk-intro{grid-column:1/-1;padding:32px 40px}.desk-intro h1{font-size:55px}.desk-intro h1 br{display:none}.desk-stat{padding:18px;flex-direction:row;gap:12px;flex-wrap:wrap}.desk-stat>.lab-icon{width:36px;height:36px;margin:0}.desk-stat strong{font-size:37px}.desk-stat h2{font-size:23px;margin:0}.desk-stat p{flex-basis:100%;max-width:none}.desk-workspace{grid-template-columns:1.25fr 1fr;gap:20px}.desk-discover{padding-inline-start:20px}.featured-lessons{grid-template-columns:repeat(2,minmax(0,1fr))}.material-spotlight{grid-template-columns:1fr;padding:20px}.bergamot-art{width:105px;height:105px}.notebook-shortcut>.lab-icon{width:37px;height:37px}.desk-calculator{grid-template-columns:1fr}.quick-calc-heading h2{font-size:29px}.lesson-grid,#recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:780px){aside.site-header,html[dir=rtl] aside.site-header{padding:13px 16px 5px;gap:10px;grid-template-columns:1fr auto}.site-header .brand{grid-column:1;grid-row:1;white-space:normal;letter-spacing:0;text-align:start}.site-header .brand .brand-title{font-size:22px;letter-spacing:-.7px}.site-header .brand span:last-child{font-size:13px;margin-inline-start:4px;white-space:nowrap}.header-controls{grid-column:2;grid-row:1;gap:5px}.header-controls .preferences{gap:5px}.site-header .preference-toggle{font-size:10px;min-height:34px;padding:8px 10px;min-width:35px}.header-controls #logout{width:29px;height:29px;min-width:29px;font-size:16px}.site-header nav{justify-content:flex-start;gap:14px;grid-row:2;grid-column:1/-1;padding-bottom:2px}.site-header nav a{font-size:12px;padding:8px 4px}.site-header nav a.active{border-radius:0}main,html[dir=rtl] main{width:calc(100% - 32px);margin:0 auto}.desk-hero{gap:8px}.desk-intro{padding:26px 25px}.desk-intro h1{font-size:43px;letter-spacing:-1.7px}.hero-mantra{font-size:9px;letter-spacing:1.7px}.hero-copy{font-size:14px}.hero-actions{gap:8px}.hero-actions .primary{font-size:15px;padding:10px 14px}.hero-actions .lab-icon{width:19px;height:19px}.desk-stat{flex-direction:column;gap:6px;padding:16px 8px}.desk-stat>.lab-icon{width:31px;height:31px}.desk-stat strong{font-size:34px}.desk-stat h2{font-size:20px}.desk-stat p{font-size:11px;line-height:1.5;margin-top:5px}.desk-workspace{grid-template-columns:1fr;margin-top:24px}.desk-discover{border:0;padding-inline-start:0}.desk-section-title h2{font-size:28px}.desk-section-title p{font-size:12px}.desk-section-title .text-link{font-size:11px}.featured-lessons{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-lesson{padding:17px 14px 23px;min-height:180px}.featured-lesson h3{font-size:19px}.material-spotlight{grid-template-columns:120px 1fr;padding:20px}.bergamot-art{width:115px;height:115px}.notebook-shortcut>.lab-icon{width:51px;height:51px}.desk-calculator{padding:20px;gap:16px}.quick-calc-tabs{gap:5px}.quick-calc-tabs a{padding:9px 5px;font-size:11px}.catalog-heading{flex-direction:column;align-items:stretch;gap:15px}.catalog-heading .course-search{width:100%;max-width:none}h1{font-size:34px}.lesson-card h3,.recipe-card h3{font-size:22px}#toast,html[dir=rtl] #toast{left:16px;right:16px;max-width:none}footer{font-size:10px}}
+@media(max-width:480px){.site-header .brand .brand-title{font-size:19px}.site-header .brand span:last-child{display:block;margin-inline-start:0;font-size:12px}.site-header .brand{line-height:1.15}.header-controls #logout{width:27px;height:27px;min-width:27px}.header-controls .preferences{gap:4px}.site-header .preference-toggle{padding:8px;min-height:34px}.desk-intro{padding:24px 22px}.desk-intro h1{font-size:38px}.desk-intro h1 br{display:block}.desk-intro>.botanical-sprig{width:55px;opacity:.4}.hero-actions .primary{font-size:14px;padding:10px 13px}.hero-actions .lab-icon{display:none}.desk-stat p{display:none}.desk-stat h2{font-size:17px}.desk-stat strong{font-size:31px}.desk-stat>.lab-icon{width:28px;height:28px}.desk-stat{border-radius:14px;padding:15px 6px}.featured-lessons{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-lesson p{font-size:12px}.desk-section-title{align-items:flex-start;gap:8px}.desk-section-title h2{font-size:27px}.desk-section-title .text-link{white-space:normal;min-width:65px}.material-spotlight{grid-template-columns:85px 1fr;padding:17px;gap:13px}.bergamot-art{width:85px;height:85px}.material-spotlight h3{font-size:25px}.material-spotlight p{font-size:12px}.material-spotlight dl{gap:10px}.notebook-shortcut{padding:19px;gap:12px}.notebook-shortcut h3{font-size:25px}.notebook-shortcut>.lab-icon{width:37px;height:37px}.desk-calculator{padding:17px}.quick-calc-tabs{grid-template-columns:repeat(2,1fr);gap:6px}.quick-calc-tabs a{font-size:12px}#desk-quick-calc{grid-template-columns:1fr 1fr}#desk-quick-results{grid-column:1/-1;border:0;padding:0;margin-top:5px}#desk-quick-results strong{font-size:24px;padding:9px 12px}.lesson-grid,#recipe-grid{grid-template-columns:1fr}.quick-calc-heading h2{font-size:27px}.quick-calc-heading>.lab-icon{width:30px;height:30px}.guide-card,.recipe-article{padding:20px}.desk-stat h2{letter-spacing:0}html[dir=rtl] .desk-intro h1{font-size:36px;line-height:1.3}html[dir=rtl] .desk-section-title h2{font-size:24px}html[dir=rtl] .featured-lesson h3{font-size:17px}html[dir=rtl] .desk-stat h2{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.featured-lesson,.desk-stat{transition:none}.featured-lesson:hover,.desk-stat:hover{transform:none}}

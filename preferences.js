@@ -70,11 +70,11 @@ function apply(){
     e.textContent=theme==='light'?'DARK':'Light';
     e.setAttribute('aria-label',language==='ar'?(theme==='light'?'تفعيل المظهر الداكن':'تفعيل المظهر الفاتح'):(theme==='light'?'Switch to dark mode':'Switch to light mode'));
   });
-  document.querySelector('meta[name="theme-color"]').content=theme==='dark'?'#10121c':'#dce7ef';
+  document.querySelector('meta[name="theme-color"]').content=theme==='dark'?'#142721':'#faf6ed';
   refresh();
 }
 const controls=()=>`<div class="preferences" aria-label="Display settings"><button class="preference-toggle secondary" type="button" data-language-toggle data-no-translate>AR</button><button class="preference-toggle secondary" type="button" data-theme-toggle data-no-translate>DARK</button></div>`;
-document.querySelector('main>header').insertAdjacentHTML('beforeend',controls());
+document.querySelector('.header-controls').insertAdjacentHTML('afterbegin',controls());
 document.querySelector('#login-form')?.insertAdjacentHTML('afterbegin',controls());
 document.addEventListener('click',e=>{
   const button=e.target.closest('[data-language-toggle],[data-theme-toggle]');
@@ -89,3 +89,7 @@ apply();
 fetch('ar.json').then(r=>{if(!r.ok)throw Error('Arabic content unavailable');return r.json();}).then(data=>{dictionary={...data,...glossary,'Language':'اللغة','Appearance':'المظهر','Light':'فاتح','Dark':'داكن','Display settings':'إعدادات العرض'};compile();refresh();}).catch(()=>{
   dictionary={...dictionary,'Language':'اللغة','Appearance':'المظهر','Light':'فاتح','Dark':'داكن','Display settings':'إعدادات العرض'};compile();refresh();
 });
+
+// Keep section tabs below the responsive top navigation.
+const headerObserver=new ResizeObserver(([entry])=>{root.style.setProperty('--site-header-height',`${Math.ceil(entry.target.getBoundingClientRect().height)}px`);});
+headerObserver.observe(document.querySelector('.site-header'));

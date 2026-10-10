@@ -1,3 +1,4 @@
+import {dashboardMarkup,initDashboard} from './lab-ui.js';
 import {searchText} from './preferences.js';
 import { lessons, families, concentrations, courseSource } from './course-data.js';
 import { scale } from './math.js';
@@ -12,7 +13,8 @@ function sourceButton(filename, page, label = 'View source page') {
   return `<button class="source-link" data-source="${escape(filename)}" data-page="${page}">${escape(label)} ↗</button>`;
 }
 
-$('#learn').innerHTML = `<p class="eyebrow">LEARN / ARTISAN PERFUMERY</p><h1>From your first note to your own scent.</h1><p class="intro">Your course, organized into lessons you can read and put into practice here.</p><div id="learning-overview"><div class="course-stats"><a href="#learn"><strong>${lessons.length}</strong><span>Practical lessons</span></a><a href="#reference"><strong>4</strong><span>Interactive guides</span></a><a href="#formulas"><strong>61</strong><span>Course formulas</span></a></div><label class="course-search">Find a lesson<input id="lesson-search" type="search" placeholder="Try carriers, maturation, photography…"></label><div id="lesson-groups"></div><p class="small">Adapted study notes from Lamai Cursos e Capacitações · Artisan Perfumery (2022). Recipe quantities and source discrepancies are identified in the relevant pages.</p></div><div id="lesson-detail" hidden></div>`;
+$('#learn').innerHTML = `<div id="learning-overview">${dashboardMarkup(lessons)}<div id="course-catalog"><div class="catalog-heading"><div><p class="eyebrow">LEARN / ARTISAN PERFUMERY</p><h2>All lessons</h2></div><label class="course-search">Find a lesson<input id="lesson-search" type="search" placeholder="Try carriers, maturation, photography\u2026"></label></div><div id="lesson-groups"></div><p class="small">Adapted study notes from Lamai Cursos e Capacita\u00e7\u00f5es \u00b7 Artisan Perfumery (2022). Recipe quantities and source discrepancies are identified in the relevant pages.</p></div></div><div id="lesson-detail" hidden></div>`;
+initDashboard();
 
 function renderLessons() {
   const q = $('#lesson-search').value.toLowerCase().trim();

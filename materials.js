@@ -20,3 +20,5 @@ function render(){
 $('#materials-tabs').addEventListener('click',e=>{const b=e.target.closest('[data-table]');if(!b)return;active=+b.dataset.table;query='';$('#materials-search').value='';render();});
 $('#materials-search').addEventListener('input',e=>{query=e.target.value;render();});
 try{const r=await fetch('scentipedia.json');if(!r.ok)throw Error();tables=(await r.json()).tables;render();}catch{$('#materials-status').textContent='The materials encyclopedia could not load. Refresh to try again.';}
+
+window.addEventListener('lab-material-selected',e=>{query=String(e.detail?.query||'');$('#materials-search').value=query;render();});
