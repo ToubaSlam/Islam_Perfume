@@ -147,3 +147,75 @@ html[dir=rtl] .circle-arrow,html[dir=rtl] .text-link>span,html[dir=rtl] .hero-ac
 @media(max-width:780px){aside.site-header,html[dir=rtl] aside.site-header{padding:13px 16px 5px;gap:10px;grid-template-columns:1fr auto}.site-header .brand{grid-column:1;grid-row:1;white-space:normal;letter-spacing:0;text-align:start}.site-header .brand .brand-title{font-size:22px;letter-spacing:-.7px}.site-header .brand span:last-child{font-size:13px;margin-inline-start:4px;white-space:nowrap}.header-controls{grid-column:2;grid-row:1;gap:5px}.header-controls .preferences{gap:5px}.site-header .preference-toggle{font-size:10px;min-height:34px;padding:8px 10px;min-width:35px}.header-controls #logout{width:29px;height:29px;min-width:29px;font-size:16px}.site-header nav{justify-content:flex-start;gap:14px;grid-row:2;grid-column:1/-1;padding-bottom:2px}.site-header nav a{font-size:12px;padding:8px 4px}.site-header nav a.active{border-radius:0}main,html[dir=rtl] main{width:calc(100% - 32px);margin:0 auto}.desk-hero{gap:8px}.desk-intro{padding:26px 25px}.desk-intro h1{font-size:43px;letter-spacing:-1.7px}.hero-mantra{font-size:9px;letter-spacing:1.7px}.hero-copy{font-size:14px}.hero-actions{gap:8px}.hero-actions .primary{font-size:15px;padding:10px 14px}.hero-actions .lab-icon{width:19px;height:19px}.desk-stat{flex-direction:column;gap:6px;padding:16px 8px}.desk-stat>.lab-icon{width:31px;height:31px}.desk-stat strong{font-size:34px}.desk-stat h2{font-size:20px}.desk-stat p{font-size:11px;line-height:1.5;margin-top:5px}.desk-workspace{grid-template-columns:1fr;margin-top:24px}.desk-discover{border:0;padding-inline-start:0}.desk-section-title h2{font-size:28px}.desk-section-title p{font-size:12px}.desk-section-title .text-link{font-size:11px}.featured-lessons{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-lesson{padding:17px 14px 23px;min-height:180px}.featured-lesson h3{font-size:19px}.material-spotlight{grid-template-columns:120px 1fr;padding:20px}.bergamot-art{width:115px;height:115px}.notebook-shortcut>.lab-icon{width:51px;height:51px}.desk-calculator{padding:20px;gap:16px}.quick-calc-tabs{gap:5px}.quick-calc-tabs a{padding:9px 5px;font-size:11px}.catalog-heading{flex-direction:column;align-items:stretch;gap:15px}.catalog-heading .course-search{width:100%;max-width:none}h1{font-size:34px}.lesson-card h3,.recipe-card h3{font-size:22px}#toast,html[dir=rtl] #toast{left:16px;right:16px;max-width:none}footer{font-size:10px}}
 @media(max-width:480px){.site-header .brand .brand-title{font-size:19px}.site-header .brand span:last-child{display:block;margin-inline-start:0;font-size:12px}.site-header .brand{line-height:1.15}.header-controls #logout{width:27px;height:27px;min-width:27px}.header-controls .preferences{gap:4px}.site-header .preference-toggle{padding:8px;min-height:34px}.desk-intro{padding:24px 22px}.desk-intro h1{font-size:38px}.desk-intro h1 br{display:block}.desk-intro>.botanical-sprig{width:55px;opacity:.4}.hero-actions .primary{font-size:14px;padding:10px 13px}.hero-actions .lab-icon{display:none}.desk-stat p{display:none}.desk-stat h2{font-size:17px}.desk-stat strong{font-size:31px}.desk-stat>.lab-icon{width:28px;height:28px}.desk-stat{border-radius:14px;padding:15px 6px}.featured-lessons{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-lesson p{font-size:12px}.desk-section-title{align-items:flex-start;gap:8px}.desk-section-title h2{font-size:27px}.desk-section-title .text-link{white-space:normal;min-width:65px}.material-spotlight{grid-template-columns:85px 1fr;padding:17px;gap:13px}.bergamot-art{width:85px;height:85px}.material-spotlight h3{font-size:25px}.material-spotlight p{font-size:12px}.material-spotlight dl{gap:10px}.notebook-shortcut{padding:19px;gap:12px}.notebook-shortcut h3{font-size:25px}.notebook-shortcut>.lab-icon{width:37px;height:37px}.desk-calculator{padding:17px}.quick-calc-tabs{grid-template-columns:repeat(2,1fr);gap:6px}.quick-calc-tabs a{font-size:12px}#desk-quick-calc{grid-template-columns:1fr 1fr}#desk-quick-results{grid-column:1/-1;border:0;padding:0;margin-top:5px}#desk-quick-results strong{font-size:24px;padding:9px 12px}.lesson-grid,#recipe-grid{grid-template-columns:1fr}.quick-calc-heading h2{font-size:27px}.quick-calc-heading>.lab-icon{width:30px;height:30px}.guide-card,.recipe-article{padding:20px}.desk-stat h2{letter-spacing:0}html[dir=rtl] .desk-intro h1{font-size:36px;line-height:1.3}html[dir=rtl] .desk-section-title h2{font-size:24px}html[dir=rtl] .featured-lesson h3{font-size:17px}html[dir=rtl] .desk-stat h2{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.featured-lesson,.desk-stat{transition:none}.featured-lesson:hover,.desk-stat:hover{transform:none}}
+
+/* Compact layout: smaller headings and less empty space across the workbench. */
+body{font-size:14px;line-height:1.55}
+aside.site-header,html[dir=rtl] aside.site-header{padding-block:11px;gap:5px 16px}
+.site-header .brand .brand-title{font-size:clamp(22px,2vw,29px)}
+.site-header .brand span:last-child{font-size:16px}
+.site-header nav{gap:18px}.site-header nav a{font-size:13px;padding-block:5px}
+main>section{padding-top:22px}main>section#learn{padding-top:14px}
+h1{font-size:clamp(28px,3vw,40px);margin-block:10px}h2{font-size:25px;margin-bottom:18px}
+.intro{font-size:14px;margin:10px 0 20px}
+.desk-intro{padding:22px 30px}.desk-intro h1{font-size:clamp(32px,3.6vw,53px);margin-bottom:14px}
+.desk-intro .eyebrow{margin-bottom:8px}.hero-mantra{margin-bottom:12px}
+.hero-copy{font-size:14px;margin-bottom:18px}.hero-actions .primary{font-size:15px;padding:9px 15px}
+.desk-stat{padding:22px 13px 18px}.desk-stat>.lab-icon{width:44px;height:44px;margin-bottom:10px}
+.desk-stat strong{font-size:clamp(32px,3.4vw,52px)}.desk-stat h2{font-size:21px;margin-bottom:10px}
+.desk-workspace{gap:22px;margin:20px 0 16px}.desk-discover{padding-inline-start:18px}
+.desk-section-title{margin-bottom:10px}.desk-section-title h2{font-size:26px}
+.featured-lessons{gap:10px}.featured-lesson{min-height:160px;padding:14px 14px 20px}
+.featured-lesson>.lab-icon{width:29px;height:29px}.featured-lesson h3{font-size:18px;margin-bottom:6px}
+.circle-arrow{width:27px;height:27px;font-size:17px;transform:translateY(9px)}
+.material-spotlight{grid-template-columns:105px minmax(0,1fr);padding:15px 16px;gap:12px}
+.bergamot-art{width:105px;height:105px}
+.material-spotlight h3,.notebook-shortcut h3{font-size:23px;margin-bottom:7px}
+.notebook-shortcut{padding:17px;gap:12px;margin-top:12px}.notebook-shortcut>.lab-icon{width:44px;height:44px}
+.notebook-shortcut p{margin-bottom:10px}
+.desk-calculator{padding:16px 20px;gap:18px;margin:16px 0 26px}.quick-calc-heading h2{font-size:24px}
+.quick-calc-tabs a{padding:6px 8px}#desk-quick-results strong{font-size:22px}
+#course-catalog{padding-top:22px;margin-bottom:22px}.catalog-heading h2{font-size:27px}
+.lesson-grid,#recipe-grid,.materials-grid{gap:12px}
+.lesson-card,.recipe-card,.card,.guide-card,.lesson-article,.recipe-article,.resource-card,.study-reference,.result-card{padding:20px}
+.lesson-card h3,.recipe-card h3{font-size:20px}.card h2,.result-card h2{font-size:23px}
+.card h3{margin-bottom:18px}.lesson-block{margin-top:20px}
+.material-card summary{padding:12px 14px;gap:7px}.material-card strong{font-size:15px}
+.material-card dl{padding:12px 14px 14px;gap:10px}
+label{font-size:13px;margin-bottom:15px}input,select,textarea{padding:10px 12px;margin-top:6px}
+.two-col{gap:14px}.calc-layout,.notebook-layout{gap:16px}
+.primary{padding:10px 18px;font-size:14px}.secondary,.file-button{padding:9px 12px;font-size:13px}
+.tabs button,.materials-tabs button,.library-tabs button,.guide-tabs button{padding:9px 12px;font-size:13px}
+.result-row{padding:12px 0}.result-row strong{font-size:23px}
+.principle{padding:12px 16px;margin:18px 0 24px}.saved{padding:14px 0}
+footer{padding-block:18px}
+html[dir=rtl] .desk-intro h1{font-size:clamp(29px,3.2vw,44px)}
+@media(max-width:1150px){
+ .desk-stat{padding:14px;gap:9px}.desk-stat>.lab-icon{width:30px;height:30px;margin:0}
+ .desk-stat strong{font-size:32px}.desk-stat h2{font-size:20px;margin:0}
+ .material-spotlight{grid-template-columns:1fr}
+}
+@media(max-width:780px){
+ aside.site-header,html[dir=rtl] aside.site-header{padding:10px 16px 4px;gap:6px}
+ .site-header .brand .brand-title{font-size:21px}.site-header .brand span:last-child{font-size:12px}
+ .site-header nav{gap:12px}.site-header nav a{font-size:12px;padding-block:7px}
+ .desk-intro{padding:22px}.desk-intro h1{font-size:36px}.hero-copy{font-size:14px}
+ .desk-stat{padding:12px 7px;gap:5px}.desk-stat h2{font-size:18px}
+ .desk-workspace{gap:16px}.desk-discover{padding-inline-start:0}
+ .desk-section-title h2{font-size:24px}.featured-lesson{min-height:155px}
+ .material-spotlight{grid-template-columns:95px minmax(0,1fr)}.bergamot-art{width:95px;height:95px}
+ h1{font-size:29px}.desk-calculator{padding:16px}.quick-calc-heading h2{font-size:23px}
+ /* Keep touch inputs readable without triggering automatic mobile zoom. */
+ input,select,textarea,#desk-quick-calc input{font-size:16px}
+}
+@media(max-width:480px){
+ .site-header .brand .brand-title{font-size:18px}.site-header .brand span:last-child{font-size:11px}
+ .desk-intro{padding:20px}.desk-intro h1{font-size:33px}
+ .desk-stat h2{font-size:16px}.desk-stat strong{font-size:28px}.desk-stat>.lab-icon{width:25px;height:25px}
+ .material-spotlight{grid-template-columns:75px minmax(0,1fr);padding:14px}.bergamot-art{width:75px;height:75px}
+ .desk-section-title h2{font-size:23px}.featured-lesson h3{font-size:17px}
+ .notebook-shortcut{padding:16px}.notebook-shortcut>.lab-icon{width:34px;height:34px}
+ .quick-calc-tabs a{padding:8px;font-size:12px}
+ .lesson-card,.recipe-card,.card,.guide-card,.lesson-article,.recipe-article,.resource-card,.study-reference,.result-card{padding:16px}
+ html[dir=rtl] .desk-intro h1{font-size:30px}html[dir=rtl] .desk-section-title h2{font-size:22px}
+ html[dir=rtl] .desk-stat h2{font-size:14px}
+}
