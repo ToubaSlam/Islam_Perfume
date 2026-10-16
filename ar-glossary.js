@@ -75,7 +75,7 @@ export default {
   'FORMULAS / FROM YOUR EBOOK':'التركيبات / من كتابك الإلكتروني','A recipe collection you can work with.':'مجموعة تركيبات جاهزة للدراسة والتجربة.',
   'Search name or ingredient':'ابحث باسم التركيبة أو المادة','Collection':'المجموعة','All formulas':'جميع التركيبات',
   'Artisan':'حرفية','Professional':'احترافية','← All formulas':'← جميع التركيبات','Use in notebook ↗':'استخدامها في دفتر التركيبات ↗',
-  'Material as listed':'المادة كما وردت في المصدر','Source role':'النوتة بحسب المصدر','Original':'الأصلية','Scaled':'بعد ضبط المقادير',
+  'Material as listed':'المادة كما وردت في المصدر','Top Note':'النوتة الافتتاحية','Middle Note':'النوتة الوسطى','Base Note':'النوتة القاعدية','Source role':'النوتة بحسب المصدر','Original':'الأصلية','Scaled':'بعد ضبط المقادير',
   'Base in the source example':'القاعدة في مثال المصدر','Enter a positive concentrate amount.':'أدخل مقدارًا موجبًا للمركز العطري.',
   'MATERIALS / SCENTIPEDIA':'المواد / الموسوعة العطرية','Know your materials.':'تعرّف إلى موادك العطرية.',
   'Search every table':'ابحث في جميع الجداول','Aromatics':'المواد العطرية','Vegetable Oils':'الزيوت النباتية',

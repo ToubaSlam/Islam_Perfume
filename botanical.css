@@ -149,6 +149,9 @@ html[dir=rtl] .circle-arrow,html[dir=rtl] .text-link>span,html[dir=rtl] .hero-ac
 @media(prefers-reduced-motion:reduce){.featured-lesson,.desk-stat{transition:none}.featured-lesson:hover,.desk-stat:hover{transform:none}}
 
 /* Compact layout: smaller headings and less empty space across the workbench. */
+.native-table .recipe-note-heading th{padding:9px 12px;text-align:start;font-size:14px;font-weight:700;color:var(--ink);background:var(--soft-mint);border-top:2px solid var(--line)}
+.native-table .recipe-note-heading[data-note=Heart] th{background:var(--soft-rose)}
+.native-table .recipe-note-heading[data-note=Base] th{background:var(--soft-lilac)}
 body{font-size:14px;line-height:1.5}
 main,html[dir=rtl] main{width:min(1240px,calc(100% - 40px));max-width:1240px}
 aside.site-header,html[dir=rtl] aside.site-header{padding-block:11px;gap:5px 16px}
