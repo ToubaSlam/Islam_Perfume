@@ -1,6 +1,6 @@
 import {dashboardMarkup,initDashboard} from './lab-ui.js';
 import {searchText} from './preferences.js';
-import { lessons, families, concentrations, courseSource } from './course-data.js';
+import { lessons, families, concentrations, courseSource, wheelBlendingMethods } from './course-data.js?v=wheel-methods';
 import { scale } from './math.js';
 
 const $ = s => document.querySelector(s);
@@ -51,7 +51,7 @@ function renderReference(id='wheel') {
   $('.reference-nav').querySelectorAll('a').forEach(a=>{const active=a.hash===`#reference/${id}`;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   const box=$('#reference-content');
   if(id==='wheel'){
-    box.innerHTML=`<article class="guide-card"><h2>The fragrance wheel</h2><p class="guide-intro">View the original course diagram. Choose a subgroup below to explore its character and neighbors.</p>${originalWheel()}<p class="source-language-note">Original artwork is preserved in its source language.</p><div id="family-description" class="original-wheel-description" aria-live="polite"></div><div class="family-buttons">${families.map((f,i)=>`<button data-family="${i}" style="--family-color:${f.color}" aria-pressed="${i===selectedFamily}"><span>${i+1}</span>${f.name}</button>`).join('')}</div><div class="guide-callout">Try neighboring families for shared qualities, opposite areas for contrast, or a triangle such as Citrus / Soft Floral / Woody Oriental. These are creative prompts from the course.</div><p class="small">The source calls one family “Oriental”; Amber / Oriental appears here so both terms are recognizable. Classifications are descriptive and can vary.</p>${sourceButton('Guide - Fragrance Wheel.pdf',1,'Compare the original wheel')}</article>`;
+    box.innerHTML=`<article class="guide-card"><h2>The fragrance wheel</h2><p class="guide-intro">View the original course diagram. Choose a subgroup below to explore its character and neighbors.</p>${originalWheel()}<p class="source-language-note">Original artwork is preserved in its source language.</p><div id="family-description" class="original-wheel-description" aria-live="polite"></div><div class="family-buttons">${families.map((f,i)=>`<button data-family="${i}" style="--family-color:${f.color}" aria-pressed="${i===selectedFamily}"><span>${i+1}</span>${f.name}</button>`).join('')}</div><section class="wheel-methods" aria-labelledby="wheel-methods-title"><h3 id="wheel-methods-title">How to blend with the fragrance wheel</h3><p class="small">Study guidance from Artisan Perfumery, pages 12 and 13.</p><ol>${wheelBlendingMethods.map(([title,body])=>`<li><h4>${title}</h4><p>${body}</p></li>`).join('')}</ol><div class="wheel-method-sources">${sourceButton(courseSource,12,'View book page 12')}${sourceButton(courseSource,13,'View book page 13')}<a class="text-link" href="#formulas">Browse the course recipes</a></div></section><p class="small">The source calls one family “Oriental”; Amber / Oriental appears here so both terms are recognizable. Classifications are descriptive and can vary.</p>${sourceButton('Guide - Fragrance Wheel.pdf',1,'Compare the original wheel')}</article>`;
     renderFamily();
   }
   if(id==='pyramid'){

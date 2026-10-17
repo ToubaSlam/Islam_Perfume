@@ -149,6 +149,11 @@ html[dir=rtl] .circle-arrow,html[dir=rtl] .text-link>span,html[dir=rtl] .hero-ac
 @media(prefers-reduced-motion:reduce){.featured-lesson,.desk-stat{transition:none}.featured-lesson:hover,.desk-stat:hover{transform:none}}
 
 /* Compact layout: smaller headings and less empty space across the workbench. */
+.wheel-methods{min-height:0;padding-top:16px;margin-top:18px;border-top:1px solid var(--line)}
+.wheel-methods h3{font-size:20px;margin:0 0 6px}.wheel-methods ol{padding-inline-start:24px;margin:14px 0}
+.wheel-methods li{padding-inline-start:5px;margin-block:14px}.wheel-methods li::marker{color:var(--mint);font-weight:700}
+.wheel-methods h4{font-size:15px;margin:0 0 5px}.wheel-methods li p{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
+.wheel-method-sources{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .native-table .recipe-note-heading th{padding:9px 12px;text-align:start;font-size:14px;font-weight:700;color:var(--ink);background:var(--soft-mint);border-top:2px solid var(--line)}
 .native-table .recipe-note-heading[data-note=Heart] th{background:var(--soft-rose)}
 .native-table .recipe-note-heading[data-note=Base] th{background:var(--soft-lilac)}

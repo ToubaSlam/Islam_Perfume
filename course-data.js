@@ -1,4 +1,12 @@
 export const courseSource = 'eBook 1 - Artisan Perfumery.pdf';
+export const wheelBlendingMethods = [
+  ['Opposite families: explore contrast','Choose a starting family and subgroup, then test it with a note from the opposite side of the wheel. The course suggests this contrast as a way to explore complexity and balance; evaluate the result in your own trials.'],
+  ['Neighboring families: build a scent foundation','Test subgroups beside one another on the wheel. Their related qualities can help you develop a cohesive scent foundation. Here, foundation means the character of the blend, rather than the base-note layer of the olfactory pyramid.'],
+  ['Triangle combinations: connect three subgroups','Choose three subgroups that form a triangle on the wheel. The book gives Citrus, Soft Floral and Woody Oriental as its example. Compare the three together and adjust their proportions during small trials.'],
+  ['Learn the materials within each subgroup','The wheel is a broad map. Familiarize yourself with the individual scents in each family and subgroup, and record their character and effect. Start with the course recipes, vary them during trials, then develop your own combinations.'],
+  ['Explore unfamiliar scents','Try materials beyond your usual favorites. Revisit scents you initially dislike; your preferences and understanding can change as you learn.'],
+  ['Build gradually, one addition at a time','Begin with a small combination. Add one note, evaluate, record the change, then decide what to add next. Avoid mixing many unfamiliar notes at once.']
+];
 // Read from the supplied DOCX transcript and checked against its course structure.
 // These are edited study notes, not a verbatim transcript or product certification.
 export const lessons = [
@@ -16,7 +24,7 @@ export const lessons = [
     ['Compare, then describe','Compare two materials and identify what they share and where they differ. Short, specific descriptions are easier to use later than simply writing “nice” or “strong.” Take breaks between evaluations.']],exercise:'Choose two materials. Write three descriptors for each, then one similarity and one difference.',action:'notebook'},
   {id:'wheel',title:'Understand the fragrance wheel',group:'Aroma fundamentals',pages:[10,11,12,13],summary:'Use four broad families and fourteen subgroups to explore relationships.',blocks:[
     ['Families and subgroups','The course wheel groups aromas into Fresh, Floral, Oriental and Woody. In the app, the Oriental family is also labeled Amber so that you can recognize both terms. The subgroup names from the supplied wheel are preserved.'],
-    ['Three ways to experiment','Try neighboring subgroups for shared qualities; compare opposite areas for contrast; or explore three areas spaced around the wheel. The course gives Citrus, Soft Floral and Woody Oriental as a triangular starting point. These are creative prompts, not guarantees of a balanced blend.'],
+    ...wheelBlendingMethods,
     ['A guide rather than a restriction','A material or accord can sit between groups, and classifications vary. Use the wheel to organize observations, then let trials show you whether a combination works. Add or remove one material at a time.']],exercise:'Select one family in Reference guides. Compare a neighboring family and a contrasting family on labeled strips.',action:'reference/wheel'},
   {id:'pyramid',title:'Top, heart and base notes',group:'Aroma fundamentals',pages:[13,14,15,16],summary:'Understand how a fragrance changes from opening to dry-down.',blocks:[
     ['Three overlapping roles','Top notes create the opening impression. Heart, or middle, notes develop the central character. Base notes contribute to the later dry-down. These roles describe a fragrance’s development rather than three completely separate stages.'],
