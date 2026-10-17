@@ -10,6 +10,13 @@ and interface copy in `ar-glossary.js`. The longer course and Materials entries
 were initially machine translated; they remain available for wording review.
 The website does not contact a translation service at runtime.
 
+The Complete book reader adds the full 40-page Artisan Perfumery transcript,
+including approximately 16,000 words of source text. Its Arabic paragraphs were
+machine translated for study; the book-reader controls use reviewed Modern
+Standard Arabic. Source illustrations keep their original lettering and can be
+enlarged in the reader. The English source text and separate editorial notes
+remain available by switching to EN.
+
 Search accepts English and Arabic. Arabic uses a right-to-left layout. Botanical
 names, source files, original artwork, chemical identifiers and user-authored
 notebook text keep their original form. Original PDF and ebook downloads are

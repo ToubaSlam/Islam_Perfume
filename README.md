@@ -22,6 +22,19 @@ Run `python scripts/build_library.py --source "D:/MyApps/Perfume"` (requires PyM
 
 ## Native course content
 
+Learn → **Read the complete book** (`#learn/book`) opens the full 40-page Artisan
+Perfumery reading edition: approximately 16,000 words of native text, nine
+original teaching figures with enlargement, full-book search, page navigation,
+a saved reading position and related calculator/notebook links. The quick
+lessons remain concise summaries. Editorial notes are visually separated from
+the source text, and Arabic long-form text is machine translated for study.
+See `BOOK_COVERAGE.md` for the page audit and `SOURCE_REVIEW.md` for ambiguities.
+
+Rebuild this edition with `python scripts/build_complete_book.py` (PyMuPDF and
+Pillow required), with the supplied PDF and DOCX in the parent workspace. It
+generates `course-book.json`, `assets/book/` and the coverage record. Rebuilding
+English content does not automatically regenerate Arabic dictionary entries.
+
 The default Learn page contains edited study lessons covering the supplied Artisan Perfumery ebook. Reference guides rebuild the fragrance wheel, note pyramid, concentration chart and dilution sheet as native HTML/SVG tools. Course formulas contains 55 artisan and 6 professional recipes visually transcribed from the supplied page images; ingredients are searchable, amounts scale in the original unit, and a recipe can open as a new notebook draft. Every lesson and recipe links to its source page.
 
 `course-data.js` contains the edited lesson and reference data. `scripts/build_formulas.py` contains the reviewed recipe transcription and generates `formulas.json`. Ambiguous source names (including “Brasil” and “Fruity violate AC”), missing material types, mixed-unit recipes and arithmetic discrepancies are labeled rather than silently resolved. Professional note roles follow the source, even when unconventional. Artisan note roles are Unassigned because the source does not provide them. Volume/drop recipes are never automatically treated as mass formulas. Existing notebook records without a unit still load as grams.

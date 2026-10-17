@@ -2,6 +2,7 @@ import {dashboardMarkup,initDashboard} from './lab-ui.js';
 import {searchText} from './preferences.js';
 import { lessons, families, concentrations, courseSource, wheelBlendingMethods } from './course-data.js?v=wheel-methods';
 import { scale } from './math.js';
+import {renderBook} from './book.js';
 
 const $ = s => document.querySelector(s);
 const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -13,7 +14,7 @@ function sourceButton(filename, page, label = 'View source page') {
   return `<button class="source-link" data-source="${escape(filename)}" data-page="${page}">${escape(label)} ↗</button>`;
 }
 
-$('#learn').innerHTML = `<div id="learning-overview">${dashboardMarkup(lessons)}<div id="course-catalog"><div class="catalog-heading"><div><p class="eyebrow">LEARN / ARTISAN PERFUMERY</p><h2>All lessons</h2></div><label class="course-search">Find a lesson<input id="lesson-search" type="search" placeholder="Try carriers, maturation, photography\u2026"></label></div><div id="lesson-groups"></div><p class="small">Adapted study notes from Lamai Cursos e Capacita\u00e7\u00f5es \u00b7 Artisan Perfumery (2022). Recipe quantities and source discrepancies are identified in the relevant pages.</p></div></div><div id="lesson-detail" hidden></div>`;
+$('#learn').innerHTML = `<div id="learning-overview"><div class="book-entry"><span>Quick lessons or the complete course text</span><a class="secondary" href="#learn/book">Read the complete book</a></div>${dashboardMarkup(lessons)}<div id="course-catalog"><div class="catalog-heading"><div><p class="eyebrow">LEARN / ARTISAN PERFUMERY</p><h2>All lessons</h2></div><label class="course-search">Find a lesson<input id="lesson-search" type="search" placeholder="Try carriers, maturation, photography\u2026"></label></div><div id="lesson-groups"></div><p class="small">Adapted study notes from Lamai Cursos e Capacita\u00e7\u00f5es \u00b7 Artisan Perfumery (2022). Recipe quantities and source discrepancies are identified in the relevant pages.</p></div></div><div id="lesson-detail" hidden></div><div id="book-study" hidden></div>`;
 initDashboard();
 
 function renderLessons() {
@@ -26,12 +27,20 @@ $('#lesson-search').oninput = renderLessons;
 renderLessons();
 
 function renderLesson(id) {
+  const isBook=id==='book';
+  $('#book-study').hidden=!isBook;
+  if(isBook){
+    $('#learning-overview').hidden=true;
+    $('#lesson-detail').hidden=true;
+    renderBook(location.hash.split('/')[2]);
+    return;
+  }
   const lesson = lessons.find(l=>l.id===id);
   $('#learning-overview').hidden = Boolean(lesson);
   $('#lesson-detail').hidden = !lesson;
   if (!lesson) return;
   const index=lessons.indexOf(lesson);
-  $('#lesson-detail').innerHTML = `<a class="back-link" href="#learn">← All lessons</a><article class="lesson-article"><div class="article-heading"><span class="tag">${lesson.group}</span><h2 tabindex="-1">${lesson.title}</h2><p>${lesson.summary}</p></div><div class="article-body">${lesson.blocks.map(([title,body])=>`<div class="lesson-block"><h3>${title}</h3><p>${body}</p></div>`).join('')}<div class="practice-box"><span class="eyebrow">TRY THIS</span><p>${lesson.exercise}</p>${lesson.action?`<a class="primary" href="#${lesson.action}">${lesson.action.startsWith('reference')?'Explore the guide':lesson.action.startsWith('calculators')?'Open calculator':lesson.action==='formulas'?'Browse formulas':'Open notebook'} ↗</a>`:''}</div>${lesson.links?`<div class="lesson-links">${lesson.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener">${label} ↗</a>`).join('')}</div>`:''}<div class="source-row"><span>Artisan Perfumery · ${lesson.pages.length===1?'page':'pages'} ${lesson.pages.join(', ')}</span>${sourceButton(courseSource,lesson.pages[0])}</div><div class="lesson-next">${index>0?`<a href="#learn/${lessons[index-1].id}">← Previous lesson</a>`:'<span></span>'}${index<lessons.length-1?`<a href="#learn/${lessons[index+1].id}">Next: ${lessons[index+1].title} →</a>`:''}</div></div></article>`;
+  $('#lesson-detail').innerHTML = `<a class="back-link" href="#learn">← All lessons</a><article class="lesson-article"><div class="article-heading"><span class="tag">${lesson.group}</span><h2 tabindex="-1">${lesson.title}</h2><p>${lesson.summary}</p></div><div class="article-body">${lesson.blocks.map(([title,body])=>`<div class="lesson-block"><h3>${title}</h3><p>${body}</p></div>`).join('')}<div class="practice-box"><span class="eyebrow">TRY THIS</span><p>${lesson.exercise}</p>${lesson.action?`<a class="primary" href="#${lesson.action}">${lesson.action.startsWith('reference')?'Explore the guide':lesson.action.startsWith('calculators')?'Open calculator':lesson.action==='formulas'?'Browse formulas':'Open notebook'} ↗</a>`:''}</div>${lesson.links?`<div class="lesson-links">${lesson.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener">${label} ↗</a>`).join('')}</div>`:''}<div class="source-row"><span>Artisan Perfumery · ${lesson.pages.length===1?'page':'pages'} ${lesson.pages.join(', ')}</span><a class="text-link" href="#learn/book/${lesson.pages[0]}">Read this part in the complete book</a>${sourceButton(courseSource,lesson.pages[0])}</div><div class="lesson-next">${index>0?`<a href="#learn/${lessons[index-1].id}">← Previous lesson</a>`:'<span></span>'}${index<lessons.length-1?`<a href="#learn/${lessons[index+1].id}">Next: ${lessons[index+1].title} →</a>`:''}</div></div></article>`;
 }
 
 $('#reference').innerHTML = `<p class="eyebrow">REFERENCE / THE ESSENTIALS</p><h1>See how the pieces fit.</h1><p class="intro">Explore the diagrams and numbers from your course as working reference tools.</p><div class="reference-layout"><nav class="reference-nav" aria-label="Reference guide"><a href="#reference/wheel">Fragrance wheel</a><a href="#reference/pyramid">Note pyramid</a><a href="#reference/concentration">Concentration</a><a href="#reference/dilution">Dilution guide</a></nav><div id="reference-content"></div></div>`;
