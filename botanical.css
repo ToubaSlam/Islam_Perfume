@@ -149,6 +149,20 @@ html[dir=rtl] .circle-arrow,html[dir=rtl] .text-link>span,html[dir=rtl] .hero-ac
 @media(prefers-reduced-motion:reduce){.featured-lesson,.desk-stat{transition:none}.featured-lesson:hover,.desk-stat:hover{transform:none}}
 
 /* Compact layout: smaller headings and less empty space across the workbench. */
+#calculator input{min-height:48px;font-size:16px}
+#calculators .tabs button{min-height:44px}
+.weight-inputs{margin:5px 0 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.weight-inputs summary{min-height:48px;display:list-item;align-content:center;cursor:pointer;font-weight:600;padding:12px 4px;font-size:14px}
+.weight-inputs .small{margin-top:0}.weight-inputs .two-col{padding-top:5px}
+.weight-results{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}.weight-results h3{font-size:15px;margin:0 0 4px}
+.weight-results .result-row{font-size:13px}.weight-results .result-row strong{font-size:21px}
+.result-row strong{white-space:nowrap}
+.calc-warning{background:var(--soft-yellow);color:var(--ink);border:1px solid var(--gold);border-radius:9px;padding:10px 12px;font-size:13px;line-height:1.6;margin-bottom:0}
+#calculators .principle{background:var(--soft-yellow);color:var(--ink);border-color:var(--gold)}
+#calculators .principle strong,#calculators .principle>span{color:var(--ink)}
+.scent-pyramid-image{display:block;max-width:950px;margin:18px auto;cursor:zoom-in;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff7ef}
+.scent-pyramid-image img{display:block;width:100%;height:auto}
+@media(max-width:480px){#calculator .two-col{grid-template-columns:1fr}#calculators .tabs button{min-height:44px}.result-row{gap:10px}.result-row>span{min-width:0}.result-row strong{font-size:21px}}
 .book-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px;font-size:13px;color:var(--muted)}
 .book-entry a{text-decoration:none}
 header.book-heading{display:flex;height:auto;gap:16px;align-items:center;justify-content:space-between;padding:0;border:0;font-size:inherit;letter-spacing:0;color:var(--ink)}
