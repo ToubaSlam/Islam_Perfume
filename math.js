@@ -23,6 +23,14 @@ function numeric(value) {
 }
 const finiteOrNull=value=>Number.isFinite(value)?value:null;
 
+export function scaleTargets(startingReading,fragranceG,carrierG) {
+  const start=numeric(startingReading),oil=numeric(fragranceG),carrier=numeric(carrierG);
+  const validStart=start!==null&&start>=0;
+  const afterOil=validStart&&oil!==null&&oil>=0?finiteOrNull(start+oil):null;
+  const afterAlcohol=afterOil!==null&&carrier!==null&&carrier>=0?finiteOrNull(afterOil+carrier):null;
+  return {afterOil,afterAlcohol};
+}
+
 export function liquidPerfume({batchML,concentration,trialDrops,dropsPerML,fragranceDensity=0.9,carrierDensity=0.8}={}) {
   const batch=numeric(batchML),percent=numeric(concentration),drops=numeric(trialDrops),conversion=numeric(dropsPerML);
   const fragranceRho=numeric(fragranceDensity),carrierRho=numeric(carrierDensity);

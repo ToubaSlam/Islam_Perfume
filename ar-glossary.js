@@ -1,5 +1,15 @@
 // Reviewed terminology and interface copy in Modern Standard Arabic.
 export default {
+  'Without taring':'دون تصفير الميزان',
+  'Starting scale reading (g)':'قراءة الميزان عند البدء (غ)',
+  'Scale precision':'دقة الميزان',
+  'Place the empty bottle on your scale and enter its current reading. Targets include the bottle weight and use the densities above.':'ضع الزجاجة الفارغة على الميزان وأدخل القراءة الحالية. تشمل القراءات المستهدفة وزن الزجاجة وتُحسب باستخدام الكثافات أعلاه.',
+  'Add fragrance oil until the scale reads':'أضف الزيت العطري حتى تصبح قراءة الميزان',
+  'Then add alcohol / carrier until the scale reads':'ثم أضف الكحول أو المادة الحاملة حتى تصبح قراءة الميزان',
+  'Fragrance to add':'كمية المادة العطرية المطلوب إضافتها',
+  'Alcohol / carrier to add':'كمية الكحول أو المادة الحاملة المطلوب إضافتها',
+  'Keep the bottle on the scale and do not tare between additions. Targets use the full calculated weights, rounded only for display.':'أبقِ الزجاجة على الميزان ولا تُصفّره بين الإضافات. تُحسب القراءات المستهدفة بالأوزان الكاملة، ولا تُقرَّب إلا عند عرضها.',
+  'Starting scale reading cannot be negative.':'لا يجوز أن تكون قراءة الميزان عند البدء سالبة.',
   'Your batch':'دفعتك','By weight (g)':'بالوزن (غ)',
   'Fragrance oil density (g/mL)':'كثافة الزيت العطري (غ/مل)',
   'Alcohol / carrier density (g/mL)':'كثافة الكحول أو المادة الحاملة (غ/مل)',

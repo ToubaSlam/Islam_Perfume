@@ -1,5 +1,5 @@
 import {t,locale} from './preferences.js';
-import {batch,dilution,scale,liquidPerfume} from './math.js?v=liquid-perfume';
+import {batch,dilution,scale,liquidPerfume,scaleTargets} from './math.js?v=scale-targets';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=n=>Number(n.toFixed(4)).toLocaleString('en',{maximumFractionDigits:4});
@@ -12,7 +12,7 @@ let mode='perfume';
 function renderCalc(){
   const [title,fields,note]=configs[mode];
   const input=([id,label,val])=>`<label>${label}<input name="${id}" type="number" inputmode="decimal" step="any" value="${val}" min="${['size','drops','conversion','stock','target','fragranceDensity','carrierDensity'].includes(id)?'0.000001':'0'}" ${['load','oil','butter','dpg','water','stock','target'].includes(id)?'max="100"':''} required></label>`;
-  $('#calculator').innerHTML=`<h3>${title}</h3><div class="two-col">${fields.map(input).join('')}</div>${mode==='perfume'?`<details class="weight-inputs"><summary>By weight (g)</summary><p class="small">Use the densities of your actual materials. The carrier conversion uses the alcohol density below.</p><div class="two-col">${input(['fragranceDensity','Fragrance oil density (g/mL)',0.9])}${input(['carrierDensity','Alcohol / carrier density (g/mL)',0.8])}</div></details>`:''}<p class="small">Results update as you change a measurement.</p>`;
+  $('#calculator').innerHTML=`<h3>${title}</h3><div class="two-col">${fields.map(input).join('')}</div>${mode==='perfume'?`<details class="weight-inputs"><summary>By weight (g)</summary><p class="small">Use the densities of your actual materials. The carrier conversion uses the alcohol density below.</p><div class="two-col">${input(['fragranceDensity','Fragrance oil density (g/mL)',0.9])}${input(['carrierDensity','Alcohol / carrier density (g/mL)',0.8])}</div></details><fieldset class="scale-inputs"><legend>Without taring</legend><p class="small">Place the empty bottle on your scale and enter its current reading. Targets include the bottle weight and use the densities above.</p><div class="two-col"><label>Starting scale reading (g)<input name="startingReading" type="number" inputmode="decimal" step="any" min="0" placeholder="44.681"></label><label>Scale precision<select name="scaleDecimals"><option value="2">0.01 g</option><option value="3">0.001 g</option></select></label></div></fieldset>`:''}<p class="small">Results update as you change a measurement.</p>`;
   $('#result-title').textContent=mode==='perfume'?'Your batch':title;
   $('.result-card>.eyebrow').textContent=mode==='perfume'?'Liquid perfume':'YOUR BATCH';
   $('#calc-note').textContent=note;
@@ -22,6 +22,12 @@ function resultRow(label,value,unit,fixed=false){
   const display=Number.isFinite(value)?(fixed?value.toFixed(4):fmt(value)):'—';
   return `<div class="result-row"><span>${label}</span><strong>${display}${Number.isFinite(value)?` <small>${unit}</small>`:''}</strong></div>`;
 }
+function scaleInstructions(v,result){
+  const targets=scaleTargets(v.startingReading,result.fragranceG,result.carrierG);
+  const decimals=v.scaleDecimals==='3'?3:2;
+  const display=value=>Number.isFinite(value)?`${value.toFixed(decimals)} <small>g</small>`:'—';
+  return `<div class="scale-targets"><h3>Without taring</h3><ol><li><span>Add fragrance oil until the scale reads</span><strong>${display(targets.afterOil)}</strong><small><span>Fragrance to add</span>: ${Number.isFinite(result.fragranceG)?fmt(result.fragranceG):'—'} g</small></li><li><span>Then add alcohol / carrier until the scale reads</span><strong>${display(targets.afterAlcohol)}</strong><small><span>Alcohol / carrier to add</span>: ${Number.isFinite(result.carrierG)?fmt(result.carrierG):'—'} g</small></li></ol><p class="small">Keep the bottle on the scale and do not tare between additions. Targets use the full calculated weights, rounded only for display.</p>${v.startingReading!==''&&Number(v.startingReading)<0?'<p class="calc-warning" role="status">Starting scale reading cannot be negative.</p>':''}</div>`;
+}
 function calculate(){
   const v=Object.fromEntries([...$('#calculator').elements].filter(e=>e.name).map(e=>[e.name,e.value]));
   if(mode==='perfume'){
@@ -30,6 +36,7 @@ function calculate(){
       resultRow('Fragrance',result.fragranceML,'mL'),resultRow('Carrier',result.carrierML,'mL'),
       resultRow('Trial blend',result.trialML,'mL',true),resultRow('Multiply trial recipe by',result.multiplier,'×',true),
       `<div class="weight-results"><h3>By weight (g)</h3>${resultRow('Fragrance',result.fragranceG,'g')}${resultRow('Carrier',result.carrierG,'g')}</div>`,
+      scaleInstructions(v,result),
       ...result.warnings.map(message=>`<p class="calc-warning" role="status">${esc(message)}</p>`)
     ].join('');
     return;

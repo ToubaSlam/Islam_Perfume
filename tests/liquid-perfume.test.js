@@ -1,8 +1,26 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {liquidPerfume} from '../math.js';
+import {liquidPerfume,scaleTargets} from '../math.js';
 
 const defaults={batchML:50,concentration:20,trialDrops:30,dropsPerML:22,fragranceDensity:0.9,carrierDensity:0.8};
+
+test('untared scale targets match the bottle example without intermediate rounding',()=>{
+  const result=scaleTargets('44.681',3.6,4.8);
+  assert.equal(result.afterOil.toFixed(2),'48.28');
+  assert.equal(result.afterAlcohol.toFixed(2),'53.08');
+  assert.equal(result.afterOil.toFixed(3),'48.281');
+  assert.equal(result.afterAlcohol.toFixed(3),'53.081');
+  const rounding=scaleTargets(1.004,0.004,0.004);
+  assert.equal(rounding.afterAlcohol.toFixed(2),'1.01');
+});
+
+test('scale targets support a tared scale and reject missing, negative or overflowing amounts',()=>{
+  assert.deepEqual(scaleTargets(0,3.6,4.8),{afterOil:3.6,afterAlcohol:8.4});
+  for(const start of ['',null,undefined,-1,'invalid',Infinity])assert.deepEqual(scaleTargets(start,3.6,4.8),{afterOil:null,afterAlcohol:null});
+  assert.deepEqual(scaleTargets(44.681,null,4.8),{afterOil:null,afterAlcohol:null});
+  assert.deepEqual(scaleTargets(44.681,3.6,-1),{afterOil:48.281,afterAlcohol:null});
+  assert.deepEqual(scaleTargets(Number.MAX_VALUE,Number.MAX_VALUE,1),{afterOil:null,afterAlcohol:null});
+});
 
 test('liquid perfume default volumes, trial scaling and weights',()=>{
   const result=liquidPerfume(defaults);
