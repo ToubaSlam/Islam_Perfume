@@ -51,3 +51,13 @@ export function liquidPerfume({batchML,concentration,trialDrops,dropsPerML,fragr
   const carrierG=carrierML!==null&&carrierRho!==null&&carrierRho>0?finiteOrNull(carrierML*carrierRho):null;
   return {fragranceML,carrierML,trialML,multiplier,fragranceG,carrierG,warnings};
 }
+
+// Drops are a volume estimate: grams = drops ÷ drops-per-mL × density (g/mL).
+export function dropsToGrams(drops,dropsPerML,density){
+  if(![drops,dropsPerML,density].every(Number.isFinite)||drops<0||dropsPerML<=0||density<=0)throw Error('Enter drops, a positive drops-per-mL value and a positive density.');
+  const mL=drops/dropsPerML;return {mL,grams:mL*density};
+}
+export function gramsToDrops(grams,dropsPerML,density){
+  if(![grams,dropsPerML,density].every(Number.isFinite)||grams<0||dropsPerML<=0||density<=0)throw Error('Enter grams, a positive drops-per-mL value and a positive density.');
+  const mL=grams/density;return {mL,drops:mL*dropsPerML};
+}
