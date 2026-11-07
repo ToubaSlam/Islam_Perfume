@@ -85,7 +85,7 @@ $('#reference-content').addEventListener('click',e=>{
 });
 $('#reference-content').addEventListener('keydown',e=>{if(e.target.matches('path[data-family]')&&['Enter',' '].includes(e.key)){e.preventDefault();selectedFamily=Number(e.target.dataset.family);renderFamily();}});
 
-$('#formulas').innerHTML=`<p class="eyebrow">FORMULAS / FROM YOUR EBOOK</p><h1>A recipe collection you can work with.</h1><p class="intro">55 artisan blends and 6 professional formulas, transcribed into searchable ingredient tables.</p><div id="formula-overview"><div class="recipe-tools"><label>Search name or ingredient<input id="recipe-search" type="search" placeholder="Try bergamot, sandalwood or Floral Garden…"></label><label>Collection<select id="recipe-filter"><option value="All">All formulas</option><option>Artisan</option><option>Professional</option></select></label></div><p id="recipe-count" class="small" role="status">Loading formulas…</p><div id="recipe-grid"></div><p class="small">Source: Lamai Cursos e Capacitações · Fragrance Formulas (2022). Study transcriptions preserve source units and supplied names; they are not verified finished-product specifications.</p></div><div id="recipe-detail" hidden></div>`;
+$('#formulas').innerHTML=`<p class="eyebrow">FORMULAS</p><nav class="formula-tabs" aria-label="Formula collections"><a href="#formulas" data-ftab="course">Course formulas</a><a href="#formulas/final" data-ftab="final">Final formulas</a></nav><div id="final-view" hidden></div><div id="course-view"><h1>A recipe collection you can work with.</h1><p class="intro">55 artisan blends and 6 professional formulas, transcribed into searchable ingredient tables.</p><div id="formula-overview"><div class="recipe-tools"><label>Search name or ingredient<input id="recipe-search" type="search" placeholder="Try bergamot, sandalwood or Floral Garden…"></label><label>Collection<select id="recipe-filter"><option value="All">All formulas</option><option>Artisan</option><option>Professional</option></select></label></div><p id="recipe-count" class="small" role="status">Loading formulas…</p><div id="recipe-grid"></div><p class="small">Source: Lamai Cursos e Capacitações · Fragrance Formulas (2022). Study transcriptions preserve source units and supplied names; they are not verified finished-product specifications.</p></div><div id="recipe-detail" hidden></div></div>`;
 
 function renderRecipes(){
   const q=$('#recipe-search').value.toLowerCase().trim(),group=$('#recipe-filter').value;
@@ -96,6 +96,9 @@ function renderRecipes(){
 $('#recipe-search').oninput=renderRecipes;$('#recipe-filter').onchange=renderRecipes;
 
 function renderRecipe(id){
+  const final=id==='final';$('#course-view').hidden=final;$('#final-view').hidden=!final;
+  document.querySelectorAll('[data-ftab]').forEach(a=>{const on=a.dataset.ftab===(final?'final':'course');a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  if(final){renderFinal();return;}
   const r=recipes.find(r=>r.id===id);$('#formula-overview').hidden=Boolean(r);$('#recipe-detail').hidden=!r;if(!r)return;
   $('#recipe-detail').innerHTML=`<a class="back-link" href="#formulas">← All formulas</a><article class="recipe-article"><span class="tag">${r.group} formula ${r.number}</span><h2>${escape(r.title)}</h2><p class="guide-intro">Source concentrate: ${number(r.total)} ${r.unit} · ${r.ingredients.length} ingredients</p><div class="recipe-scale"><label>Scale concentrate to (${r.unit})<input id="recipe-target" type="number" step="any" min="0.000001" value="${r.total}"></label><button class="primary" id="recipe-to-notebook">Use in notebook ↗</button></div><p id="recipe-scale-status" class="small" aria-live="polite"></p><div class="native-table-wrap"><table class="native-table"><thead><tr><th>Material as listed</th><th>Original (${r.unit})</th><th>Scaled (${r.unit})</th></tr></thead><tbody id="recipe-amounts"></tbody></table></div><div class="guide-callout">${escape(r.note)}</div>${r.baseNote?`<h3>Base in the source example</h3><p>${escape(r.baseNote)}</p>`:''}<p class="small">Amounts above are the aromatic concentrate. Scaling preserves the source measurement basis; drops, milliliters and grams are not interchangeable. Verify material identity, stock strength and suitability for the intended finished product before use.</p><div class="source-row"><span>Fragrance Formulas · printed page ${r.sourcePage}</span>${sourceButton(recipeSource,r.pdfPage)}</div></article>`;
   function update(){try{const target=Number($('#recipe-target').value);const a=scale(target,r.ingredients.map(i=>i.amount));const ingredientRow=(i,n)=>`<tr><td>${escape(i.name)}</td><td>${number(i.amount)}</td><td class="scaled-amount">${number(a[n])}</td></tr>`;
@@ -116,3 +119,39 @@ window.addEventListener('hashchange',routeContent);
 document.addEventListener('click',e=>{const b=e.target.closest('[data-source]');if(b)window.dispatchEvent(new CustomEvent('open-course-source',{detail:{filename:b.dataset.source,page:Number(b.dataset.page)}}));});
 renderReference();routeContent();
 try{const r=await fetch('formulas.json');if(!r.ok)throw Error();recipes=(await r.json()).formulas;renderRecipes();routeContent();}catch{$('#recipe-count').textContent='The formula collection could not load. Refresh to try again.';}
+
+// Final formulas: notebook formulas marked "Final", turned into a finished-perfume batch sheet.
+const types=[['Eau de Cologne',4],['Eau de Toilette',10],['Eau de Parfum',18],['Parfum',25]];
+let finalOpen=null;
+function renderFinal(){
+  const list=(window.notebookFormulas||[]).filter(f=>f.final);
+  const box=$('#final-view');
+  if(!list.length){box.innerHTML=`<h1>Your finished perfumes.</h1><p class="intro">No final formulas yet. In the <a href="#notebook">Notebook</a>, open or create a formula, tick <strong>Final formula</strong> and save it. It will appear here as a ready-to-weigh perfume recipe.</p>`;return;}
+  if(!list.some(f=>f.id===finalOpen))finalOpen=list[0].id;
+  const f=list.find(f=>f.id===finalOpen);
+  box.innerHTML=`<h1>Your finished perfumes.</h1><p class="intro">Real formulas from your notebook, worked out as a full batch: concentrate plus alcohol, by weight.</p>
+  <div class="library-filters final-list">${list.map(x=>`<button class="secondary" data-final="${escape(x.id)}" aria-pressed="${x.id===f.id}">${escape(x.name)}</button>`).join('')}</div>
+  <article class="recipe-article"><span class="tag">${escape(f.family)}</span><h2 dir="auto">${escape(f.name)}</h2>
+  <div class="recipe-tools final-inputs"><label>Bottle size (mL)<input id="fin-size" type="number" min="0.1" step="any" value="50"></label>
+  <label>Perfume type<select id="fin-type">${types.map(([n,p])=>`<option value="${p}" ${p===18?'selected':''}>${n} (${p}%)</option>`).join('')}<option value="custom">Custom %</option></select></label>
+  <label>Concentration (%)<input id="fin-pct" type="number" min="0.1" max="100" step="any" value="18"></label>
+  <label>Concentrate density (g/mL)<input id="fin-rho" type="number" min="0.01" step="any" value="${f.density||0.9}"></label>
+  <label>Alcohol density (g/mL)<input id="fin-alc" type="number" min="0.01" step="any" value="0.79"></label></div>
+  <div class="native-table-wrap"><table class="native-table"><thead><tr><th>Material</th><th>Note</th><th>Parts</th><th>% of concentrate</th><th>Weigh (g)</th></tr></thead><tbody id="fin-rows"></tbody></table></div>
+  <div id="fin-summary" class="guide-callout" aria-live="polite"></div>
+  ${f.observations?`<p class="small" dir="auto" style="white-space:pre-line">${escape(f.observations)}</p>`:''}
+  <p class="small">Weights assume one average density for the whole concentrate; use your materials' real densities for precision. Check IFRA limits for each material before making a product for others.</p></article>`;
+  box.querySelectorAll('[data-final]').forEach(b=>b.onclick=()=>{finalOpen=b.dataset.final;renderFinal();});
+  const total=f.ingredients.reduce((s,i)=>s+i.parts,0);
+  function calc(){
+    const size=Number($('#fin-size').value),pct=Number($('#fin-pct').value),rho=Number($('#fin-rho').value),alc=Number($('#fin-alc').value);
+    if(!(size>0&&pct>0&&pct<=100&&rho>0&&alc>0)){$('#fin-rows').replaceChildren();$('#fin-summary').textContent='Enter a positive bottle size, densities and a concentration up to 100%.';return;}
+    const concML=size*pct/100,concG=concML*rho,alcML=size-concML,alcG=alcML*alc;
+    $('#fin-rows').innerHTML=f.ingredients.map(i=>`<tr><td dir="auto">${escape(i.name)}</td><td>${escape(i.note)}</td><td>${number(i.parts)}</td><td>${number(i.parts/total*100)}%</td><td class="scaled-amount">${number(concG*i.parts/total)}</td></tr>`).join('');
+    $('#fin-summary').innerHTML=`<strong>Weigh:</strong> ${number(concG)} g concentrate (${number(concML)} mL) + ${number(alcG)} g alcohol (${number(alcML)} mL) = ${number(size)} mL ${escape($('#fin-type').selectedOptions[0].text.replace(/ \(.*/,''))}.`;
+  }
+  $('#fin-type').onchange=()=>{if($('#fin-type').value!=='custom')$('#fin-pct').value=$('#fin-type').value;calc();};
+  $('#fin-pct').oninput=()=>{$('#fin-type').value=types.some(([,p])=>String(p)===$('#fin-pct').value)?$('#fin-pct').value:'custom';calc();};
+  ['#fin-size','#fin-rho','#fin-alc'].forEach(s=>$(s).oninput=calc);calc();
+}
+window.addEventListener('notebook-changed',()=>{if(location.hash==='#formulas/final')renderFinal();});
