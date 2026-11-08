@@ -6,7 +6,7 @@ const root=$('#materials-app');
 let tables=[],active=0,query='';
 root.innerHTML=`<div class="library-tools"><label>Search every table<input id="materials-search" type="search" placeholder="Search oils, notes, constituents, blends…"></label><div id="materials-tabs" class="library-filters" role="group" aria-label="Table"></div></div><p id="materials-status" role="status">Loading the encyclopedia…</p><div id="materials-list"></div>`;
 // The first field is the entry's name; these go in the summary line instead of the body.
-const summaryFields=['Botanical Name','Aromatic Note','Fragrance Wheel','Purposes','Definition','Purpose','Safe 4'];
+const summaryFields=['Primary','Note','Group','Botanical Name','Aromatic Note','Fragrance Wheel','Purposes','Definition','Purpose','Safe 4'];
 const body=(row,fields)=>fields.slice(1).filter(f=>row[f]&&!summaryFields.includes(f)).map(f=>{const v=row[f];if(/^https?:\/\//.test(v))return `<div><dt>${safe(f)}</dt><dd><a href="${safe(v)}" target="_blank" rel="noopener">Open link ↗</a></dd></div>`;return `<div><dt>${safe(f)}</dt><dd ${['Botanical Name','Botanical Family'].includes(f)?'data-no-translate lang="la"':''}>${safe(v)}</dd></div>`;}).join('');
 function render(){
   const q=query.trim().toLowerCase();
@@ -19,6 +19,6 @@ function render(){
 }
 $('#materials-tabs').addEventListener('click',e=>{const b=e.target.closest('[data-table]');if(!b)return;active=+b.dataset.table;query='';$('#materials-search').value='';render();});
 $('#materials-search').addEventListener('input',e=>{query=e.target.value;render();});
-try{const r=await fetch('scentipedia.json');if(!r.ok)throw Error();tables=(await r.json()).tables;render();}catch{$('#materials-status').textContent='The materials encyclopedia could not load. Refresh to try again.';}
+try{const [a,b]=await Promise.all([fetch('worksheet.json'),fetch('scentipedia.json')]);if(!a.ok||!b.ok)throw Error();tables=[...(await a.json()).tables,...(await b.json()).tables];render();}catch{$('#materials-status').textContent='The materials encyclopedia could not load. Refresh to try again.';}
 
 window.addEventListener('lab-material-selected',e=>{query=String(e.detail?.query||'');$('#materials-search').value=query;render();});
