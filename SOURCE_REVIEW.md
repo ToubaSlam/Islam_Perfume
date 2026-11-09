@@ -16,4 +16,4 @@ The quick lessons are edited summaries. The complete book reader now includes al
 
 Professional note roles follow the source even where a placement is unconventional. Artisan formulas have **Unassigned** note roles because none are provided. All drop and mL recipes retain their source units when opened in the notebook.
 
-Start review at [Joyfulness](https://toubaslam.github.io/Islam_Perfume/#formulas/artisan-17) or [Pro Formula 2](https://toubaslam.github.io/Islam_Perfume/#formulas/pro-2). Each has a button to the exact source page.
+Start review at [Joyfulness](https://toubaslam.github.io/SJ_Perfumer/#formulas/artisan-17) or [Pro Formula 2](https://toubaslam.github.io/SJ_Perfumer/#formulas/pro-2). Each has a button to the exact source page.

@@ -6,7 +6,7 @@ Run locally: `python -m http.server 4173`, then open http://localhost:4173. Test
 
 ## Publishing
 
-In repository Settings → Pages → Build and deployment → Source, select GitHub Actions. Push to main or run Publish Perfume Atelier. Expected address: https://toubaslam.github.io/Islam_Perfume/.
+In repository Settings → Pages → Build and deployment → Source, select GitHub Actions. Push to main or run Publish Perfume Atelier. Expected address: https://toubaslam.github.io/SJ_Perfumer/.
 
 The repository and website are public, as authorized by the owner for free GitHub Pages hosting. The supplied course materials are included in the public repository and website at the owner’s request. Saved personal formulas remain in browser storage.
 
