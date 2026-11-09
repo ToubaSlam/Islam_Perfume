@@ -1,4 +1,4 @@
-# Islam · Perfume Atelier
+# SJ Perfume
 
 Personal perfumery workbench for GitHub Pages, with liquid perfume, solid perfume, diffuser and dilution calculators; searchable study cards; local course file opening; and a formula notebook with proportional scaling and JSON backups.
 

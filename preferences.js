@@ -53,7 +53,7 @@ function translateDocument(){
     }
     attributes.set(el,records);
   }
-  document.title='Perfume Maker Lab by Sل';
+  document.title='SJ Perfume';
   observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['placeholder','aria-label','alt','title']});
 }
 let scheduled=false;
